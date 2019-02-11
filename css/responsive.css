@@ -1,0 +1,36 @@
+/* feature box responsiveness */
+
+@media (max-width: 56.875em) { 
+	.num-cols-4 .widget-inner { column-count: 2;}
+}
+@media (max-width: 48.9375em) { 
+	.num-cols-3 .widget-inner { column-count: 1;}
+}
+
+@media (max-width: 22em) { 		
+	.num-cols-3 .widget-inner { column-count: 1;}
+	.num-cols-4 .widget-inner { column-count: 1;}
+}
+
+/*
+
+cols
+3
+
+
+
+    Breakpoints.tablet_sm =   
+	;  // 44.375em
+    Breakpoints.tablet_md =   783;  // 48.9375em
+    Breakpoints.desktop_sm = 910;  // 56.875em
+    Breakpoints.desktop_md = 985;  // 61.5625em
+    Breakpoints.desktop_lg = 1200; // 75em
+	
+	
+	galaxy s5	360/640
+	pixel		411/731
+	i5			320/568
+	i6/7/8		375/667
+	
+	
+	*/

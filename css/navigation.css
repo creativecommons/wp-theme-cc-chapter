@@ -1,0 +1,467 @@
+/* NAVIGATION CSS */
+
+/*  #################   MAIN   ################    */
+
+.main-navigation {
+	display: block; 
+	font-size: 2.4rem; 
+	font-family: "Source Sans Pro", sans-serif;
+}
+.main-navigation a {
+	padding-left: 0.7em;
+	padding-right: 0.7em; 
+}
+.main-navigation .primary-menu {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	font-weight: 700;
+	width: 100%; 
+	position: relative;
+	top: 8px;
+}
+.main-navigation .primary-menu > li {
+	border-left: 1px solid rgba(255, 255, 255, 0.55) !important;
+	float: none;
+	text-align: center;
+	margin: 0;
+	list-style-image: none; 
+    padding: 0;
+}
+.main-navigation .primary-menu > li:first-child { border-left:none !important; }
+.main-navigation .current_page_item a,
+.main-navigation .current-page-ancestor a {
+	background: rgba(0,0,0,.4);
+	color: #fff; 
+
+}
+.main-navigation a {
+	color: #fff;
+	padding: 0 15px;
+	line-height: 3.6rem;
+}
+.main-navigation a:hover, .main-navigation a:focus {
+	background: rgba(0,0,0,.2) !important;
+	color: #fff !important; 
+}
+
+
+
+
+
+/*  #################   SECONDARY  ################    */
+
+.secondary-navigation {
+	display: block;
+	position: relative;
+	right: 55px;  
+	top: 0px;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	opacity: 1; 
+}
+.secondary-menu {
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 1.5rem; 
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin: 0;
+}
+.secondary-menu li {
+	border-top: 0 none;
+	list-style-type: none;
+	list-style-image: none; 
+}
+.secondary-menu .current_page_item a {
+	background: #E15803;
+	color: #fff;
+	font-weight: 400; 
+}
+.secondary-menu a {
+	color: #fff;
+	display: block;
+	line-height: 1em;
+	padding: 0.8em 1em; 
+}
+.secondary-menu a:hover, .secondary-menu a:focus {
+	background: #E15803;
+	color: #fff !important; 
+}
+.secondary-menu a[href*="global-affiliate-network"]::before {
+	content: "";
+	font-family: "cc-fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
+	/* you can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+	/* Font smoothing. That was taken from TWBS */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+	font-size: 1.3em;
+	line-height: 0.5em; 
+}
+.secondary-menu a[href*="search"]::before {
+	content: "";
+	font-family: "cc-fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
+	/* you can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+	/* Font smoothing. That was taken from TWBS */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+	font-size: 1.2em;
+	line-height: 0.5em; 
+}
+	
+	
+/*  #################   SOCIAL  ################    */
+
+
+  .social-navigation {
+    margin: 0 !important;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease; 
+}
+    .social-navigation li {
+      list-style-image: none; 
+}
+    .social-navigation li:last-child {
+      margin-right: 0; 
+}
+    .social-navigation a {
+      background: #efbe00;
+      border: 0 none;
+      color: #fff;
+    height: 29px;
+    width: 29px;
+	     padding: 0;
+    margin: 0 5px;
+    overflow: hidden;
+    line-height: 2em;
+}
+      .social-navigation a::before {
+        content: "";
+        font-family: "cc-fontello";
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: .2em;
+        text-align: center;
+        /* opacity: .8; */
+        /* For safety - reset parent styles, that can break glyph codes*/
+        font-variant: normal;
+        text-transform: none;
+        /* fix buttons height, for twitter bootstrap */
+        line-height: 1em;
+        /* Animation center compensation - margins should be symmetric */
+        /* remove if not needed */
+        margin-left: .2em;
+        /* you can be more comfortable with increased icons size */
+        /* font-size: 120%; */
+        /* Font smoothing. That was taken from TWBS */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        /* Uncomment for 3D effect */
+        /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+        height: auto;
+        position: relative;
+        top: 0.5em;
+        left: 0.08em; 
+}
+      .social-navigation a[href^="mailto:"]:before {
+        content: "\e801";
+        left: 0.1em;
+        top: 0.35em; 
+}
+      .social-navigation a[href*="facebook.com"]:before {
+        content: "\e802"; 
+}
+      .social-navigation a[href*="twitter.com"]:before {
+        content: "\e803"; 
+}
+      .social-navigation a:hover, .social-navigation a:focus {
+        background: #464646;
+        color: #fff; 
+}
+        .social-navigation a:hover::before, .social-navigation a:focus::before {
+          color: #fff !important; 
+}
+    .site-header .social-navigation {
+      display: block; 
+	}
+	
+	
+	
+/*  #################   MOBILE  ################    */
+
+.mobile-navigation {
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 2.4rem;
+	text-align: center; 
+    transition: all 1s;
+    height: 0px;
+    overflow: hidden;
+}
+.toggled-on .mobile-navigation {
+    display: none;
+    height: 285px;
+    box-shadow: 0 0 15px 0px rgba(0,0,0,.8);
+}
+.mobile-navigation ul {
+	margin: 0; 
+}
+.mobile-navigation li {
+	list-style: none outside none; 
+}
+.mobile-navigation .current_page_item a {
+    background: #E15803;
+    color: #fff; 
+}
+.mobile-navigation a {
+    color: #fff;
+    display: block;
+    line-height: 1em;
+    padding: 0.2em 1em 0.25em 1em; 
+}
+.mobile-navigation a:hover, .mobile-navigation a:focus {
+	background: #F8722A !important;
+	color: #fff !important; 
+}
+.mobile-navigation .mobile-menu {
+	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
+	border-bottom: 0 none;
+	margin-bottom: 10px; 
+}
+
+.menu-toggle {
+	border: 0 none;
+	color: #fff;
+	font-size: 50px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease; 
+}
+.menu-toggle:hover, .menu-toggle:focus {
+	color: #ffffff !important; 
+}
+.menu-toggle.toggled-on {
+	background: transparent; 
+}
+.menu-toggle.toggled-on:hover, .menu-toggle.toggled-on:focus {
+	background: transparent; 
+}
+.menu-toggle.toggled-on i::before {
+	content: '\e80f'; 
+}
+.menu-toggle span {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0; 
+}
+
+
+/*
+  @media (min-width: 56.875em) and (min-width: 56.875em) {
+    .secondary-menu {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: end;
+		-webkit-justify-content: flex-end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+		-webkit-flex-wrap: nowrap;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		margin: 0;
+	}
+      .secondary-menu > li {
+        float: none;
+        position: relative;
+        text-align: center;
+        list-style-image: none; 
+		margin: 0;
+}
+        .secondary-menu > li::after {
+          color: rgba(255, 255, 255, 0.55);
+          content: '|';
+          display: inline-block;
+          position: absolute;
+          right: -0.1em;
+          top: 0.35em; 
+	}
+        .secondary-menu > li.social-navigation::after { display: none; }
+}
+*/
+.site-header.sticky.detached .social-navigation {
+	display: none; 
+}
+
+
+.breadcrumbs {
+  font-size: 1.5rem;
+  margin-bottom: 25px; 
+}
+
+
+/*  #################   RESPONSIVE  ################    */
+
+/*	### < 985px  ###	*/
+@media (max-width: 64em) {
+	
+	
+}
+
+/*	### < 910px  ###	*/
+
+
+@media (max-width: 56.874em) {
+	#site-navigation { display:none; }
+	.site-header-menu {
+		margin: 0;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: 100%;
+		width: 100%;
+		z-index: 100;
+		display: block;
+		flex: initial;
+	}
+	.site-header-menu.toggled-on {
+		margin: 0;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: 100%;
+		width: 100%;
+		z-index: 100; 
+	}
+    .site-header-menu.toggled-on::before {
+		/* box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5); */
+		content: '';
+		display: block;
+		height: 1px;
+		left: 0;
+		position: absolute;
+		top: -1px;
+		width: 100%;
+		z-index: 2; 
+	}
+    .site-header-menu li {
+		background: #1eb6d9; 
+		border-bottom: 1px solid #ffffff;
+		list-style-image: none;
+		margin: 0; 
+	}
+	.site-header-menu li:first-child {
+		border-top: 0 none; 
+	}
+	.site-header-menu .mobile-navigation li:first-child {
+		border-top: 1px solid #ffffff;
+	}
+	.site-header-menu li:last-child {
+		border-bottom: 0 none; 
+	}
+    .site-header-menu a {
+		font-weight: 700;
+		padding-bottom: 15px;
+		padding-top: 15px; 
+	}
+	.site-header-menu a:hover, .site-header-menu a:focus {
+		background: #F8722A;
+	}
+
+	.toggled-on .mobile-navigation { display: block; }
+}
+
+/*	### < 783px  ###	*/
+@media (max-width: 48.9375em) {
+	
+
+
+}
+
+/*	### < 640px  ### ???	*/
+@media (max-width: 44.375em) {
+	
+	
+}
+
+/*	### < 783px  ###	*/
+@media (max-width: 26.5em){
+
+
+	
+}
+
+/*	### > 985px  ###	*/
+@media (min-width: 61.5625em) {
+
+
+}
+
+.admin-bar .site-header.sticky.detached.offscreen { top: 30px; }
+.admin-bar.layout-mobile .site-header.sticky.detached.offscreen { top: 45px; }
