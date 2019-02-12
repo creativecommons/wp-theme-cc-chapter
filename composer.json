@@ -1,0 +1,26 @@
+{
+    "name": "creativecommons/wp-theme-cc-chapter",
+    "description": "The Creative Commons Chapter theme",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Quentin Rogers",
+            "email": "quentin@affinitybridge.com"
+        },
+        {
+            "name": "Dale McGladdery",
+            "email": "dale@affinitybridge.com"
+        },
+        {
+            "name": "Timid Robot Zehta",
+            "email": "timid@creativecommons.org"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "cc-chapter"
+    }
+}
