@@ -29,15 +29,15 @@ function twentysixteen_entry_meta() {
 }
 
 
-function cc_affiliate_setup() {
+function cc_chapter_setup() {
   remove_theme_support( 'custom-logo' );
 }
-add_action( 'after_setup_theme', 'cc_affiliate_setup', 9999 );
+add_action( 'after_setup_theme', 'cc_chapter_setup', 9999 );
 
 /**
  * Enqueue Scripts / Styles
  */
-function cc_affiliate_enqueue_scripts() {
+function cc_chapter_enqueue_scripts() {
 wp_enqueue_style( 	'parent-style', get_template_directory_uri() . '/style.css' );
 wp_enqueue_style( 	'cc-google-fonts','//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Roboto+Condensed:400,700');
 wp_enqueue_style(	'cc-fontello', get_stylesheet_directory_uri() . '/fonts/fontello/css/cc-fontello.css' );
@@ -53,25 +53,25 @@ wp_enqueue_script(	'cc-donation', get_stylesheet_directory_uri() . '/js/donation
 
 // wp_style_add_data( 	'cc-style', 'rtl', 'replace' );
 
-add_action( 'wp_enqueue_scripts', 'cc_affiliate_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'cc_chapter_enqueue_scripts' );
 
 /**
  * Dequeue Styles
  */
-function cc_affiliate_dequeue_styles() {
+function cc_chapter_dequeue_styles() {
 	wp_dequeue_style( 'twentysixteen-fonts');
 	wp_deregister_style( 'twentysixteen-fonts');
 	wp_dequeue_style( 'genericons');
 	wp_deregister_style( 'genericons');
 }
-add_action( 'wp_enqueue_scripts', 'cc_affiliate_dequeue_styles', 9999 );
-add_action( 'wp_head', 'cc_affiliate_dequeue_styles', 9999 );
+add_action( 'wp_enqueue_scripts', 'cc_chapter_dequeue_styles', 9999 );
+add_action( 'wp_head', 'cc_chapter_dequeue_styles', 9999 );
 
 /**
  * Register menus.
  *
  */
-function cc_affiliate_register_menu() {
+function cc_chapter_register_menu() {
   register_nav_menus( array(
     'mobile' => __( 'Mobile Menu' ),
     'secondary' => __( 'Secondary Menu' ),
@@ -79,7 +79,7 @@ function cc_affiliate_register_menu() {
     'social'  => __( 'Social Links Menu' ),
   ) );
 }
-add_action('init', 'cc_affiliate_register_menu');
+add_action('init', 'cc_chapter_register_menu');
 
 
 /**
@@ -88,7 +88,7 @@ add_action('init', 'cc_affiliate_register_menu');
  */
  
  
-function cc_affiliate_widgets_init() {
+function cc_chapter_widgets_init() {
 	
 	// Register three sidebars.
 	$sidebars = array ( 
@@ -204,20 +204,20 @@ function cc_affiliate_widgets_init() {
 
 
 
-function cc_affiliate_remove_parent_sidebars(){
+function cc_chapter_remove_parent_sidebars(){
   unregister_sidebar('sidebar-2');
   unregister_sidebar('sidebar-3');
 }
 
-add_action( 'widgets_init', 'cc_affiliate_widgets_init',10 );
-add_action( 'widgets_init', 'cc_affiliate_remove_parent_sidebars', 11 );
+add_action( 'widgets_init', 'cc_chapter_widgets_init',10 );
+add_action( 'widgets_init', 'cc_chapter_remove_parent_sidebars', 11 );
 
 // stop wp removing span tags
-function cc_affiliate_tinymce_fix($init) {
+function cc_chapter_tinymce_fix($init) {
     $init['extended_valid_elements'] = 'span[*]';
     return $init;
 }
-add_filter('tiny_mce_before_init', 'cc_affiliate_tinymce_fix');
+add_filter('tiny_mce_before_init', 'cc_chapter_tinymce_fix');
 
 /**
  * Generate custom search form
@@ -225,7 +225,7 @@ add_filter('tiny_mce_before_init', 'cc_affiliate_tinymce_fix');
  * @param string $form Form HTML.
  * @return string Modified form HTML.
  */
-function cc_affiliate_search_form( $form ) {
+function cc_chapter_search_form( $form ) {
     $form  = '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">';
     $form .= '  <label>';
     $form .= '    <span class="screen-reader-text">' . _x( 'Search for:', 'label' ) . '</span>';
@@ -241,9 +241,9 @@ function cc_affiliate_search_form( $form ) {
 
     return $form;
 }
-add_filter( 'get_search_form', 'cc_affiliate_search_form' );
+add_filter( 'get_search_form', 'cc_chapter_search_form' );
 
-function cc_affiliate_filter_add_tags_and_category($content) {
+function cc_chapter_filter_add_tags_and_category($content) {
   if(is_single()) {
     $new_content = '';
     $categories_list = get_the_category_list(' ', ', ');
@@ -259,12 +259,12 @@ function cc_affiliate_filter_add_tags_and_category($content) {
   }
   return $content;
 }
-add_filter('the_content', 'cc_affiliate_filter_add_tags_and_category');
+add_filter('the_content', 'cc_chapter_filter_add_tags_and_category');
 
-function cc_affiliate_modify_read_more_link() {
+function cc_chapter_modify_read_more_link() {
   return sprintf('<a class="more-link" href="' . get_permalink() . '">Read More<span class="screen-reader-text"> "%s"</span></a>', get_the_title( get_the_ID() ));
 }
-add_filter( 'the_content_more_link', 'cc_affiliate_modify_read_more_link' );
+add_filter( 'the_content_more_link', 'cc_chapter_modify_read_more_link' );
 
 // Gotta keep the name as twentysixteen or else the base theme will override it.
 
@@ -279,8 +279,8 @@ function twentysixteen_excerpt_more() {
 add_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
 
 
-add_filter ('eat_exclude_types', 'cc_affiliate_eat_excluded_types', 10, 1);
-function cc_affiliate_eat_excluded_types ( $exclude_types ){
+add_filter ('eat_exclude_types', 'cc_chapter_eat_excluded_types', 10, 1);
+function cc_chapter_eat_excluded_types ( $exclude_types ){
     $exclude_types[] = 'page';
     return $exclude_types;
 }

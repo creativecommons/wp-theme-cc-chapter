@@ -10,7 +10,7 @@
  */
  
 
- //	$post_id = cc_affiliate_create_post('Sample Hero NEW', 'sample-hero','<p>This is the hero post</p>', 'post');
+ //	$post_id = cc_chapter_create_post('Sample Hero NEW', 'sample-hero','<p>This is the hero post</p>', 'post');
 
 ?>
 	</div><!-- .site-content -->
