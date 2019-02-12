@@ -1970,25 +1970,25 @@ h1.entry-title {
     text-decoration: none; 
 }
 
-.global-affiliate-network {
+.cc-global-network {
   background-color: #00B5DA;
   padding: 55px 10px; 
 }
   @media (min-width: 44.375em) {
-    .global-affiliate-network {
+    .cc-global-network {
       padding: 55px; 
 	}
 }
-  .global-affiliate-network h2 a {
+  .cc-global-network h2 a {
     color: #fff; 
 }
-  .global-affiliate-network a {
+  .cc-global-network a {
     color: #fff; 
 }
-    .global-affiliate-network a:hover {
+    .cc-global-network a:hover {
       color: #333333; 
 }
-  .global-affiliate-network .network-map a img {
+  .cc-global-network .network-map a img {
     margin: 0 auto;
     height: auto;
     width: auto;

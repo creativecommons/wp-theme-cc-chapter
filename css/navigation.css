@@ -101,7 +101,7 @@
 	background: #E15803;
 	color: #fff !important; 
 }
-.secondary-menu a[href*="global-affiliate-network"]::before {
+.secondary-menu a[href*="cc-global-network"]::before {
 	content: "";
 	font-family: "cc-fontello";
 	font-style: normal;
