@@ -295,7 +295,7 @@ input[type="submit"] {
     width: 32px; 
 }
     .search-form .search-submit::before {
-      content: "";
+      content: "î …";
       font-family: "cc-fontello";
       font-style: normal;
       font-weight: normal;
@@ -943,7 +943,7 @@ hr {
   text-transform: uppercase; 
 }
   .more-link::after {
-    content: "";
+    content: "î Š";
     font-family: "cc-fontello";
     font-style: normal;
     font-weight: normal;
@@ -1620,7 +1620,7 @@ body::before, body::after {
 }
     #content-above-mobile .widget.advanced-sidebar-menu > .widget-title::after,
     #content-above-mobile .widget.widget_categories > .widget-title::after {
-      content: "";
+      content: "î ˆ";
       font-family: "cc-fontello";
       font-style: normal;
       font-weight: normal;
@@ -1672,7 +1672,7 @@ body::before, body::after {
 }
       #content-above-mobile .widget.advanced-sidebar-menu ul li::before,
       #content-above-mobile .widget.widget_categories ul li::before {
-        content: "";
+        content: "î Š";
         font-family: "cc-fontello";
         font-style: normal;
         font-weight: normal;
@@ -1970,25 +1970,25 @@ h1.entry-title {
     text-decoration: none; 
 }
 
-.cc-global-network {
+.global-affiliate-network {
   background-color: #00B5DA;
   padding: 55px 10px; 
 }
   @media (min-width: 44.375em) {
-    .cc-global-network {
+    .global-affiliate-network {
       padding: 55px; 
 	}
 }
-  .cc-global-network h2 a {
+  .global-affiliate-network h2 a {
     color: #fff; 
 }
-  .cc-global-network a {
+  .global-affiliate-network a {
     color: #fff; 
 }
-    .cc-global-network a:hover {
+    .global-affiliate-network a:hover {
       color: #333333; 
 }
-  .cc-global-network .network-map a img {
+  .global-affiliate-network .network-map a img {
     margin: 0 auto;
     height: auto;
     width: auto;
@@ -2338,7 +2338,7 @@ body.author .site-main .author-page-header .author-info-container {
         font-size: 2.5rem; 
 }
         body.author .site-main .author-page-header .author-info-container .author-intro .social-links .genericon.genericon-linkedin::before {
-          content: "";
+          content: "î ‘";
           font-family: "cc-fontello";
           font-style: normal;
           font-weight: normal;
@@ -2367,7 +2367,7 @@ body.author .site-main .author-page-header .author-info-container {
           margin: 0px; 
 }
         body.author .site-main .author-page-header .author-info-container .author-intro .social-links .genericon.genericon-facebook::before {
-          content: "";
+          content: "î ";
           font-family: "cc-fontello";
           font-style: normal;
           font-weight: normal;
@@ -2396,7 +2396,7 @@ body.author .site-main .author-page-header .author-info-container {
           margin: 0px; 
 }
         body.author .site-main .author-page-header .author-info-container .author-intro .social-links .genericon.genericon-twitter::before {
-          content: "";
+          content: "î Œ";
           font-family: "cc-fontello";
           font-style: normal;
           font-weight: normal;
@@ -2425,7 +2425,7 @@ body.author .site-main .author-page-header .author-info-container {
           margin: 0px; 
 }
         body.author .site-main .author-page-header .author-info-container .author-intro .social-links .genericon.genericon-mail::before {
-          content: "";
+          content: "î ’";
           font-family: "cc-fontello";
           font-style: normal;
           font-weight: normal;
@@ -2912,7 +2912,7 @@ body.page-id-48781 #input_3_9 {
 }
       body.page-id-48781 #input_3_1 > li:last-child::before,
       body.page-id-48781 #input_3_9 > li:last-child::before {
-        content: "";
+        content: "î “";
         font-family: "cc-fontello";
         font-style: normal;
         font-weight: normal;
@@ -3578,7 +3578,7 @@ body.error404 {
           font-size: 2.5rem; 
 }
           .cc-team-shortcode ul li .intro .social-links .genericon.genericon-linkedin::before {
-            content: "";
+            content: "î ‘";
             font-family: "cc-fontello";
             font-style: normal;
             font-weight: normal;
@@ -3607,7 +3607,7 @@ body.error404 {
             margin: 0px; 
 }
           .cc-team-shortcode ul li .intro .social-links .genericon.genericon-facebook::before {
-            content: "";
+            content: "î ";
             font-family: "cc-fontello";
             font-style: normal;
             font-weight: normal;
@@ -3636,7 +3636,7 @@ body.error404 {
             margin: 0px; 
 }
           .cc-team-shortcode ul li .intro .social-links .genericon.genericon-twitter::before {
-            content: "";
+            content: "î Œ";
             font-family: "cc-fontello";
             font-style: normal;
             font-weight: normal;
@@ -3665,7 +3665,7 @@ body.error404 {
             margin: 0px; 
 }
           .cc-team-shortcode ul li .intro .social-links .genericon.genericon-mail::before {
-            content: "";
+            content: "î ’";
             font-family: "cc-fontello";
             font-style: normal;
             font-weight: normal;
@@ -3744,7 +3744,7 @@ blockquote.cc-short-block {
 	}
 }
     blockquote.cc-short-block .blockquote-text .blockquote-text-inner::before {
-      content: "";
+      content: "î ”";
       font-family: "cc-fontello";
       font-style: normal;
       font-weight: normal;
@@ -3788,7 +3788,7 @@ blockquote.cc-short-block {
       filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=6); 
 }
     blockquote.cc-short-block .blockquote-text .blockquote-text-inner::after {
-      content: "";
+      content: "î ”";
       font-family: "cc-fontello";
       font-style: normal;
       font-weight: normal;
@@ -3935,7 +3935,7 @@ blockquote.cc-short-block {
       padding-left: 20px; 
 }
       .wrapper-sidebar .widget ul li::before {
-        content: "";
+        content: "î Š";
         font-family: "cc-fontello";
         font-style: normal;
         font-weight: normal;
@@ -4826,7 +4826,7 @@ blockquote.cc-short-block {
     font-size: 1.9rem; 
 }
     #text-8 .widget-title::before {
-      content: "";
+      content: "î ";
       font-family: "cc-fontello";
       font-style: normal;
       font-weight: normal;
@@ -4909,7 +4909,7 @@ blockquote.cc-short-block {
     font-size: 1.9rem; 
 }
     #gform_widget-4 .widget-title::before {
-      content: "";
+      content: "î ";
       font-family: "cc-fontello";
       font-style: normal;
       font-weight: normal;
@@ -5422,7 +5422,7 @@ blockquote.cc-short-block {
       font-size: 1.6rem; 
 }
       .cc-widget-ip-supporters .all-supporters a::after {
-        content: "";
+        content: "î Š";
         font-family: "cc-fontello";
         font-style: normal;
         font-weight: normal;
