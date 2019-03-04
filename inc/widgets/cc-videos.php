@@ -30,27 +30,24 @@ class CreativeCommons_Videos extends WP_Widget {
 		$cc_video_show_excerpt = isset($instance['cc_video_show_excerpt']) ? $instance['cc_video_show_excerpt'] : false;
 		$cc_video_hero_content_display = isset($instance['cc_video_hero_content_display']) ? $instance['cc_video_hero_content_display'] : "excerpt";
 		$cc_video_content_display = isset($instance['cc_video_content_display']) ? $instance['cc_video_content_display'] : "excerpt";
-	//	$cc_video_aspect_ratio = isset($instance['cc_video_aspect_ratio']) ? $instance['cc_video_aspect_ratio'] : "3_2";
- 
+		//	$cc_video_aspect_ratio = isset($instance['cc_video_aspect_ratio']) ? $instance['cc_video_aspect_ratio'] : "3_2";
 		//$cc_video_show_excerpt = $instance[ 'cc_video_show_excerpt' ] ? 'true' : 'false';
-
 		echo $args['before_widget'];
 		$noheader = "no-header";
 		if(isset($cc_video_title) || isset($cc_video_description)){
 			$noheader = false;
 		}
 		// add  $cc_video_theme to section classes 
-?>
-<section class="featured-videos widget  num-cols-<?php echo $cc_video_numposts;?>  <?php echo $noheader;?>">
-
-<?php 
-	if(!$noheader){ ?>
-	<header>
-		<?php if($cc_video_title) { ?><h2><?php print $cc_video_title; ?></h2><?php } ?>
-		<?php if($cc_video_description){ ?><div class="widget-description"><?php print $cc_video_description; ?></div><div style="clear:both;"></div><?php } ?>
-	</header>
-	<?php }  ?>
-	<div class="widget-inner">
+    ?>
+    <section class="featured-videos widget  num-cols-<?php echo $cc_video_numposts;?>  <?php echo $noheader;?>">
+    <?php 
+        if(!$noheader){ ?>
+            <header>
+                <?php if($cc_video_title) { ?><h2><?php print $cc_video_title; ?></h2><?php } ?>
+                <?php if($cc_video_description){ ?><div class="widget-description"><?php print $cc_video_description; ?></div><div style="clear:both;"></div><?php } ?>
+            </header>
+        <?php }  ?>
+	    <div class="widget-inner">
 		<?php 
 			
 		// The other features
@@ -66,26 +63,23 @@ class CreativeCommons_Videos extends WP_Widget {
 				} else {
 					$category_link = NULL;
 				}
-				$custom = get_post_custom();
-				
-	?>
-		<article>
-			<div class="item">
-				<div class="teaser">
-					<div class="thumbnail" <?php if($cc_video_content_display == 'hide'){ ?> style="display:none;" <?php } ?>><div class="video"><?php 
-						if($cc_video_content_display == 'excerpt'){ print the_excerpt(); } 
-						else { print the_content(); } ?>
-					</div>
-					</div>
-					<h3 class="title"><a href="<?php print $url; ?>"><?php print get_the_title() ?></a></h3>
-					<?php if($cc_video_post_read_more) { ?><div class="more"><a href="<?php print $url; ?>"><?php print $cc_video_post_read_more; ?></a></div><?php } ?>
-				</div>
-			</div>
-		</article>
-		<?php 
+				$custom = get_post_custom();		
+	            ?>
+                <article>
+                    <div class="item">
+                        <div class="teaser">
+                            <div class="thumbnail" <?php if($cc_video_content_display == 'hide'){ ?> style="display:none;" <?php } ?>><div class="video"><?php 
+                                if($cc_video_content_display == 'excerpt'){ print the_excerpt(); } 
+                                else { print the_content(); } ?>
+                            </div>
+                            </div>
+                            <h3 class="title"><a href="<?php print $url; ?>"><?php print get_the_title() ?></a></h3>
+                            <?php if($cc_video_post_read_more) { ?><div class="more"><a href="<?php print $url; ?>"><?php print $cc_video_post_read_more; ?></a></div><?php } ?>
+                        </div>
+                    </div>
+                </article>
+		    <?php 
 			}
-			
-			
             // The four other features.
             // If we have a special feature, then it is 3 featured and 1 special feature.
             // Otherwise, it is 4 features.
@@ -95,83 +89,53 @@ class CreativeCommons_Videos extends WP_Widget {
               $have_special_feature = TRUE;
             }
 		?>
-	</div>
+	    </div>
 
-	<!-- fix more link... category/type  -->
-	<?php if($cc_video_more) { ?><div class="more"><a href="/?post_type=post"><?php print $cc_video_more; ?><i class="cc-icon-right-dir"></i></a></div><?php } ?>
-</section>
+        <!-- fix more link... category/type  -->
+        <?php if($cc_video_more) { ?><div class="more"><a href="/?post_type=post"><?php print $cc_video_more; ?><i class="cc-icon-right-dir"></i></a></div><?php } ?>
+    </section>
 
 <?php
     echo $args['after_widget'];
 	}
 	
-public function form( $instance ) {
-// TITLE
-	if( isset( $instance[ 'cc_video_title' ] ) ) {
-						$cc_video_title = $instance[ 'cc_video_title' ];} 
-	else {				$cc_video_title = __( 'Videos', 'wpb_widget_domain' );}
-	// DESCRIPTION
-	if( isset( $instance[ 'cc_video_description' ] ) ) {
-						$cc_video_description = $instance[ 'cc_video_description' ];} 
-	else {				$cc_video_description = __( 'Here are some featured videos to help explain some of our focus areas and how CC works. <a href="https://www.youtube.com/user/creativecommons" target="_blank">Check out our youtube page for more videos</a>.', 'wpb_widget_domain' ); }
-	//MORE ARTICLES
-	if( isset( $instance[ 'cc_video_more' ] ) ) {
-						$cc_video_more = $instance[ 'cc_video_more' ]; } 
-	else {				$cc_video_more = __( '', 'wpb_widget_domain' ); }
-	//READ MORE
-	if( isset( $instance[ 'cc_video_post_read_more' ])){	
-						$cc_video_post_read_more = $instance[ 'cc_video_post_read_more' ];} 
-	else {				$cc_video_post_read_more = __( '', 'wpb_widget_domain' ); }
-//Repeat for number of posts
-	if( isset( $instance[ 'cc_video_numposts' ] ) ) {
-						$cc_video_numposts = $instance[ 'cc_video_numposts' ];}
-	else {				$cc_video_numposts = __( '3', 'wpb_widget_domain' );}      
-//Content Display Type
-	if( isset( $instance[ 'cc_video_content_display' ] ) ) {
-						$cc_video_content_display = $instance[ 'cc_video_content_display' ];}
-	else {				$cc_video_content_display = __( 'excerpt', 'wpb_widget_domain' );}     
+    public function form( $instance ) {
+        $cc_video_title = ( !empty( $instance[ 'cc_video_title' ] ) ) ? $instance[ 'cc_video_title' ] : __( 'Videos', 'wpb_widget_domain' );
+        $cc_video_description = ( !empty( $instance[ 'cc_video_description' ] ) ) ? $instance[ 'cc_video_description' ] : __( 'Here are some featured videos to help explain some of our focus areas and how CC works. <a href="https://www.youtube.com/user/creativecommons" target="_blank">Check out our youtube page for more videos</a>.', 'wpb_widget_domain' );
+        $cc_video_more = ( !empty( $instance[ 'cc_video_more' ] ) ) ? $instance[ 'cc_video_more' ] : __( '', 'wpb_widget_domain' );
+        $cc_video_post_read_more = ( !empty( $instance[ 'cc_video_post_read_more' ] ) ) ? $instance[ 'cc_video_post_read_more' ] : __( '', 'wpb_widget_domain' );
+        $cc_video_numposts = ( !empty( $instance[ 'cc_video_numposts' ] ) ) ? $instance[ 'cc_video_numposts' ] : __( '3', 'wpb_widget_domain' );
+        $cc_video_content_display = ( !empty( $instance[ 'cc_video_content_display' ] ) ) ? $instance[ 'cc_video_content_display' ] : __( 'excerpt', 'wpb_widget_domain' );
+        $cc_video_hero_content_display = ( !empty( $instance[ 'cc_video_hero_content_display' ] ) ) ? $instance[ 'cc_video_hero_content_display' ] : __( 'hide', 'wpb_widget_domain' );
+        $cc_video_show_excerpt = ( !empty( $instance[ 'cc_video_show_excerpt' ] ) ) ? $instance[ 'cc_video_show_excerpt' ] : __( 'true', 'wpb_widget_domain' );
+        $title = ( !empty( $instance[ 'title' ] ) ) ? $instance[ 'title' ] : __( 'Videos', 'wpb_widget_domain' );
 
-	if( isset( $instance[ 'cc_video_hero_content_display' ] ) ) {
-						$cc_video_hero_content_display = $instance[ 'cc_video_hero_content_display' ];}
-	else {				$cc_video_hero_content_display = __( 'hide', 'wpb_widget_domain' );}	  
-
-//show excerpt
-	if( isset( $instance[ 'cc_video_show_excerpt' ] ) ) {
-						$cc_video_show_excerpt = $instance[ 'cc_video_show_excerpt' ];}
-	else {				$cc_video_show_excerpt = __( 'true', 'wpb_widget_domain' );}
-// Widget Title
-	if( isset( $instance[ 'title' ] ) ) {
-						$title = $instance[ 'title' ];}
-	else {				$title = __( 'Videos', 'wpb_widget_domain' );}
-
-        ?>
-	<p><label for="<?php echo $this->get_field_id( 'cc_video_title' ); ?>"><?php _e( 'Title:' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'cc_video_title' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_title' ); ?>" type="text" value="<?php echo esc_attr( $cc_video_title ); ?>" /></p>
-	<p><label for="<?php echo $this->get_field_id( 'cc_video_description' ); ?>"><?php _e( 'Description:' ); ?></label>
-		<textarea class="widefat" id="<?php echo $this->get_field_id( 'cc_video_description' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_description' ); ?>" type="text"><?php echo esc_attr( $cc_video_description ); ?></textarea></p>
-	<p><label for="<?php echo $this->get_field_id( 'cc_video_more' ); ?>"><?php _e( 'More Articles Link:' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'cc_video_more' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_more' ); ?>" type="text" value="<?php echo esc_attr( $cc_video_more ); ?>" /></p>
-	<p><label for="<?php echo $this->get_field_id( 'cc_video_post_read_more' ); ?>"><?php _e( 'Read More Link:' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'cc_video_post_read_more' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_post_read_more' ); ?>" type="text" value="<?php echo esc_attr( $cc_video_post_read_more ); ?>" /></p>
-	<p><label for="<?php echo $this->get_field_id( 'cc_video_numposts' ); ?>"><?php _e( 'Number of Posts:' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'cc_video_numposts' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_numposts' ); ?>" type="text" value="<?php echo esc_attr( $cc_video_numposts ); ?>" /></p>
-		
-	<div style="">	
-		<div>
-			<label for="<?php echo $this->get_field_id( 'cc_video_content_display' ); ?>">Content Display:</label>
-			<p><label><input type="radio" value="excerpt" name="<?php echo $this->get_field_name( 'cc_video_content_display' ); ?>" <?php checked( $cc_video_content_display, 'excerpt' ); ?> id="<?php echo $this->get_field_id( 'cc_video_content_display' ); ?>" />
-				<?php esc_attr_e( 'Show the Excerpt', 'text_domain' ); ?></label></p>
-			<p><label><input type="radio" value="content" name="<?php echo $this->get_field_name( 'cc_video_content_display' ); ?>" <?php checked( $cc_video_content_display, 'content' ); ?> id="<?php echo $this->get_field_id( 'cc_video_content_display' ); ?>" />
-				<?php esc_attr_e( 'Show Full Content', 'text_domain' ); ?></label></p>
-			<p><label><input type="radio" value="hide" name="<?php echo $this->get_field_name( 'cc_video_content_display' ); ?>" <?php checked( $cc_video_content_display, 'hide' ); ?> id="<?php echo $this->get_field_id( 'cc_video_content_display' ); ?>" />
-				<?php esc_attr_e( 'Hide Content', 'text_domain' ); ?></label></p>
-		</p>	
-		</div>	
-	</div>	
-	<?php
-	
-
-}
+            ?>
+        <p><label for="<?php echo $this->get_field_id( 'cc_video_title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'cc_video_title' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_title' ); ?>" type="text" value="<?php echo esc_attr( $cc_video_title ); ?>" /></p>
+        <p><label for="<?php echo $this->get_field_id( 'cc_video_description' ); ?>"><?php _e( 'Description:' ); ?></label>
+            <textarea class="widefat" id="<?php echo $this->get_field_id( 'cc_video_description' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_description' ); ?>" type="text"><?php echo esc_attr( $cc_video_description ); ?></textarea></p>
+        <p><label for="<?php echo $this->get_field_id( 'cc_video_more' ); ?>"><?php _e( 'More Articles Link:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'cc_video_more' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_more' ); ?>" type="text" value="<?php echo esc_attr( $cc_video_more ); ?>" /></p>
+        <p><label for="<?php echo $this->get_field_id( 'cc_video_post_read_more' ); ?>"><?php _e( 'Read More Link:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'cc_video_post_read_more' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_post_read_more' ); ?>" type="text" value="<?php echo esc_attr( $cc_video_post_read_more ); ?>" /></p>
+        <p><label for="<?php echo $this->get_field_id( 'cc_video_numposts' ); ?>"><?php _e( 'Number of Posts:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'cc_video_numposts' ); ?>" name="<?php echo $this->get_field_name( 'cc_video_numposts' ); ?>" type="text" value="<?php echo esc_attr( $cc_video_numposts ); ?>" /></p>
+            
+        <div style="">	
+            <div>
+                <label for="<?php echo $this->get_field_id( 'cc_video_content_display' ); ?>">Content Display:</label>
+                <p><label><input type="radio" value="excerpt" name="<?php echo $this->get_field_name( 'cc_video_content_display' ); ?>" <?php checked( $cc_video_content_display, 'excerpt' ); ?> id="<?php echo $this->get_field_id( 'cc_video_content_display' ); ?>" />
+                    <?php esc_attr_e( 'Show the Excerpt', 'text_domain' ); ?></label></p>
+                <p><label><input type="radio" value="content" name="<?php echo $this->get_field_name( 'cc_video_content_display' ); ?>" <?php checked( $cc_video_content_display, 'content' ); ?> id="<?php echo $this->get_field_id( 'cc_video_content_display' ); ?>" />
+                    <?php esc_attr_e( 'Show Full Content', 'text_domain' ); ?></label></p>
+                <p><label><input type="radio" value="hide" name="<?php echo $this->get_field_name( 'cc_video_content_display' ); ?>" <?php checked( $cc_video_content_display, 'hide' ); ?> id="<?php echo $this->get_field_id( 'cc_video_content_display' ); ?>" />
+                    <?php esc_attr_e( 'Hide Content', 'text_domain' ); ?></label></p>
+            </p>	
+            </div>	
+        </div>	
+        <?php
+    }
   /**
    * Save the options.
    */
