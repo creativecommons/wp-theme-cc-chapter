@@ -10,3 +10,4 @@ maps/
 *.css.map
 
 /vendor/
+package-lock.json
