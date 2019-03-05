@@ -1,3 +1,13 @@
+=== Creative Commons - Chapter WordPress theme ===
+Contributors: Quentin Rogers, Dale McGladdery, Timid Robot, Hugo Solar
+Tags: CreativeCommons
+Requires at least: 4.5+
+Tested up to: 5.0.3
+Requires PHP: 7.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+== Installation ==
 This theme uses npm, gulp, and browserify to manage dependencies.
 
 Versions of node and npm we know work:
