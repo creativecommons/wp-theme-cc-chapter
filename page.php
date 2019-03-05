@@ -14,7 +14,7 @@
 get_header(); ?>
 
 <!-- header-below -->
-<?php get_template_part( 'template-parts/sidebar/header-below' ); ?>
+<?php get_template_part( 'template-parts/sidebar/sidebar','header-below' ); ?>
 <!-- END header-below -->
 <div id="primary" class="content-area">
   <div id="wrapper-main" class="wrapper-main">
@@ -26,8 +26,8 @@ get_header(); ?>
 		?>
 	</div>
 	  <main id="main" class="site-main" role="main">
-		<?php get_template_part( 'template-parts/sidebar/content-above-mobile' ); ?>
-		<?php get_template_part( 'template-parts/sidebar/content-above' ); ?>
+		<?php get_template_part( 'template-parts/sidebar/sidebar','content-above-mobile' ); ?>
+		<?php get_template_part( 'template-parts/sidebar/sidebar','content-above' ); ?>
 		<?php
 			// Start the loop.
 		while ( have_posts() ) :
@@ -45,7 +45,7 @@ get_header(); ?>
 			endwhile;
 		?>
 	  </main><!-- .site-main -->
-		<?php get_template_part( 'template-parts/sidebar/content-bottom' ); ?>
+		<?php get_template_part( 'template-parts/sidebar/sidebar','content-bottom' ); ?>
   </div>
 	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div id="wrapper-sidebar" class="wrapper-sidebar">
@@ -54,7 +54,7 @@ get_header(); ?>
 	<?php endif; ?>
 </div><!-- .content-area -->
 <!-- content-below -->
-<?php get_template_part( 'template-parts/sidebar/content-below' ); ?>
+<?php get_template_part( 'template-parts/sidebar/sidebar','content-below' ); ?>
 <!-- END content-below -->
 
 <?php get_footer(); ?>

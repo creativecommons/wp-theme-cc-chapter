@@ -52,14 +52,14 @@ get_header(); ?>
 		?>
 
 	  </main><!-- .site-main -->
-	<?php get_template_part( 'template-parts/sidebar/content-bottom' ); ?>
+	<?php get_template_part( 'template-parts/sidebar/sidebar','content-bottom' ); ?>
   </div>
   <div id="wrapper-sidebar" class="wrapper-sidebar">
 	<?php get_sidebar(); ?>
   </div>
 </div><!-- .content-area -->
 <!-- content-below -->
-<?php get_template_part( 'template-parts/sidebar/content-below' ); ?>
+<?php get_template_part( 'template-parts/sidebar/sidebar','content-below' ); ?>
 <!-- END content-below -->
 
 <?php get_footer(); ?>

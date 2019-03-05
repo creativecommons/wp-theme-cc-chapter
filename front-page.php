@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <!-- header-below -->
-<?php get_template_part( 'template-parts/sidebar/header-below' ); ?>
+<?php get_template_part( 'template-parts/sidebar/sidebar','header-below' ); ?>
 <!-- END header-below -->
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -29,10 +29,10 @@ get_header(); ?>
 
     </main><!-- .site-main -->
 
-    <?php get_template_part( 'template-parts/sidebar/content-bottom' ); ?>
+    <?php get_template_part( 'template-parts/sidebar/sidebar','content-bottom' ); ?>
 
 </div><!-- .content-area -->
 <!-- home-content-below -->
-    <?php get_template_part( 'template-parts/sidebar/homepage-content-widgets' ); ?>
+    <?php get_template_part( 'template-parts/sidebar/sidebar','homepage-content-widgets' ); ?>
 <!-- END home-content-below -->
 <?php get_footer(); ?>

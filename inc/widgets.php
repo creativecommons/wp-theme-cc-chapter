@@ -2,13 +2,13 @@
 /**
  * THEME WIDGETS
  */
-require TEMPLATEPATH . '/inc/widgets/cc-links.php';
-require TEMPLATEPATH . '/inc/widgets/cc-programs.php';
-require TEMPLATEPATH . '/inc/widgets/cc-works.php';
-require TEMPLATEPATH . '/inc/widgets/cc-videos.php';
-require TEMPLATEPATH . '/inc/widgets/cc-news.php';
-require TEMPLATEPATH . '/inc/widgets/cc-header-links.php';
-require TEMPLATEPATH . '/inc/widgets/cc-footer-links.php';
+require STYLESHEETPATH . '/inc/widgets/cc-links.php';
+require STYLESHEETPATH . '/inc/widgets/cc-programs.php';
+require STYLESHEETPATH . '/inc/widgets/cc-works.php';
+require STYLESHEETPATH . '/inc/widgets/cc-videos.php';
+require STYLESHEETPATH . '/inc/widgets/cc-news.php';
+require STYLESHEETPATH . '/inc/widgets/cc-header-links.php';
+require STYLESHEETPATH . '/inc/widgets/cc-footer-links.php';
 
 class cc_widgets {
 	private static $instance;

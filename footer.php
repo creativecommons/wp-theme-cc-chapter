@@ -42,7 +42,7 @@
       </div>
 
       <div class="column cc-footer-contact">
-      <?php get_sidebar( 'footer-center' ); ?>
+      <?php get_template_part( 'template-parts/sidebar/sidebar','footer-center' ); ?>
       </div>
 
       <div class="column cc-footer-license">

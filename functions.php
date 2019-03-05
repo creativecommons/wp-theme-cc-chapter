@@ -9,9 +9,9 @@ define( 'CC_CSS_RELEASE_SERIAL_NUMBER', '20181120' );
 /**
  * Include telated files
 */
-require TEMPLATEPATH . '/inc/taxonomies.php';
-require TEMPLATEPATH . '/inc/widgets.php';
-require TEMPLATEPATH . '/inc/blog_install.php';
+require STYLESHEETPATH . '/inc/taxonomies.php';
+require STYLESHEETPATH . '/inc/widgets.php';
+require STYLESHEETPATH . '/inc/blog_install.php';
 
 function twentysixteen_entry_meta() {
 

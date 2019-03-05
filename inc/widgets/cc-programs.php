@@ -58,7 +58,7 @@ class CreativeCommons_Programs extends WP_Widget {
 				<?php
 
 				// The other features
-				$the_query = cc_widgets_get_featured_posts_by_taxonomy_query( 'program', 'highlight', $cc_programs_numposts );
+				$the_query = cc_widgets::get_featured_posts_by_taxonomy_query( 'program', 'highlight', $cc_programs_numposts );
 				while ( $the_query->have_posts() ) {
 					$the_query->the_post();
 					$hero_post_id = get_the_ID();
@@ -115,7 +115,7 @@ class CreativeCommons_Programs extends WP_Widget {
 					// If we have a special feature, then it is 3 featured and 1 special feature.
 					// Otherwise, it is 4 features.
 					$have_special_feature = false;
-					$the_special_query    = cc_widgets_get_homepage_features_query( 'program', 0 );
+					$the_special_query    = cc_widgets::get_homepage_features_query( 'program', 0 );
 				if ( $the_special_query->have_posts() ) {
 					$have_special_feature = true;
 				}

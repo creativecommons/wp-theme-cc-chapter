@@ -156,7 +156,7 @@ class CreativeCommons_Works extends WP_Widget {
 				// If we have a special feature, then it is 3 featured and 1 special feature.
 				// Otherwise, it is 4 features.
 				$have_special_feature = false;
-				$the_special_query    = cc_widgets_get_homepage_features_query( 'program', 0 );
+				$the_special_query    = cc_widgets::get_homepage_features_query( 'program', 0 );
 			if ( $the_special_query->have_posts() ) {
 				$have_special_feature = true;
 			}

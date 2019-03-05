@@ -37,8 +37,8 @@ get_header(); ?>
 					?>
 				</header><!-- .page-header -->
 
-				<?php get_template_part( 'template-parts/sidebar/content-above-mobile' ); ?>
-				<?php get_template_part( 'template-parts/sidebar/content-above' ); ?>
+				<?php get_template_part( 'template-parts/sidebar/sidebar','content-above-mobile' ); ?>
+				<?php get_template_part( 'template-parts/sidebar/sidebar','content-above' ); ?>
 
 				<?php
 				// Start the Loop.
@@ -71,7 +71,7 @@ get_header(); ?>
 			endif;
 			?>
 	  </main><!-- .site-main -->
-		<?php get_template_part( 'template-parts/sidebar/content-bottom' ); ?>
+		<?php get_template_part( 'template-parts/sidebar/sidebar','content-bottom' ); ?>
 	</div>
 	<div id="wrapper-sidebar" class="wrapper-sidebar">
 		<?php get_sidebar(); ?>
