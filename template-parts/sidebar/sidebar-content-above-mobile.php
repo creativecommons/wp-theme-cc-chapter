@@ -8,8 +8,8 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'content-above' )  ) : ?>
-	<aside id="content-above" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'content-above' ); ?>
+<?php if ( is_active_sidebar( 'content-above-mobile' ) ) : ?>
+	<aside id="content-above-mobile" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'content-above-mobile' ); ?>
 	</aside><!-- .sidebar .widget-area -->
 <?php endif; ?>

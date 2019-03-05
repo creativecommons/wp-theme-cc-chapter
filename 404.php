@@ -10,28 +10,28 @@
 get_header(); ?>
 
   <div id="primary" class="content-area">
-    <div id="wrapper-main" class="wrapper-main">
-      <main id="main" class="site-main" role="main">
+	<div id="wrapper-main" class="wrapper-main">
+	  <main id="main" class="site-main" role="main">
 
-      <section class="error-404 not-found">
-        <header class="page-header">
-          <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentyfifteen' ); ?></h1>
-        </header><!-- .page-header -->
+	  <section class="error-404 not-found">
+		<header class="page-header">
+		  <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentyfifteen' ); ?></h1>
+		</header><!-- .page-header -->
 
-        <div class="page-content">
-          <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyfifteen' ); ?></p>
+		<div class="page-content">
+		  <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyfifteen' ); ?></p>
 
-          <?php get_search_form(); ?>
-        </div><!-- .page-content -->
-      </section><!-- .error-404 -->
+			<?php get_search_form(); ?>
+		</div><!-- .page-content -->
+	  </section><!-- .error-404 -->
 
-      </main><!-- .site-main -->
-    </div>
-    <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-      <div id="wrapper-sidebar" class="wrapper-sidebar">
-        <?php get_sidebar('sidebar-1'); ?>
-      </div>
-    <?php endif; ?>
+	  </main><!-- .site-main -->
+	</div>
+	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+	  <div id="wrapper-sidebar" class="wrapper-sidebar">
+		<?php get_sidebar( 'sidebar-1' ); ?>
+	  </div>
+	<?php endif; ?>
   </div><!-- .content-area -->
 
 <?php get_footer(); ?>

@@ -7,8 +7,9 @@
  * @since Twenty Sixteen 1.0
  */
 ?>
-<?php if ( is_active_sidebar( 'content-below' )  ) : ?>
-	<div id="content-below" class="widget-area content-below">
-		<?php dynamic_sidebar( 'content-below' ); ?>
+
+<?php if ( is_active_sidebar( 'home-content-below' ) ) : ?>
+	<div id="home-content-below" class="widget-area">
+		<?php dynamic_sidebar( 'home-content-below' ); ?>
 	</div><!-- .sidebar .widget-area -->
 <?php endif; ?>

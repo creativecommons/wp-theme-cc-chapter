@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'header-below' )  ) : ?>
+<?php if ( is_active_sidebar( 'header-below' ) ) : ?>
 	<aside id="header-below" class="widget-area">
 		<?php dynamic_sidebar( 'header-below' ); ?>
 	</aside><!-- .sidebar .widget-area -->
