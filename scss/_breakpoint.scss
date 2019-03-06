@@ -1,0 +1,39 @@
+/* ---- _breakpoint-new.scss ---- */
+
+@mixin breakpoint($point) {
+   @if $point == desktop-xl-layout {
+     @media (min-width:100em) { @content ; }
+  }
+   @else if $point == desktop-lg-layout {
+     @media (min-width: 75em) { @content ; }
+  }
+    @else if $point == desktop-md-layout {
+     @media (min-width: 61.5625em) { @content ; }
+  }
+   @else if $point == desktop-sm-layout {
+     @media (min-width: 56.875em)  { @content ; }
+  }
+  @else if $point == tablet-lg-layout {
+     @media (max-width: 56.874em)  { @content ; }
+  }
+  @else if $point == tablet-md-layout {
+     @media (max-width: 48.9375em)  { @content ; }
+  }
+  @else if $point == tablet-sm-layout {
+     @media (max-width: 44.375em)  { @content ; }
+
+  }
+}
+/*
+$tablet-sm-layout:   44.375em; // 710px
+$tablet-md-layout:  48.9375em; // 783px
+$desktop-sm-layout:  56.875em; // 910px
+$desktop-md-layout: 61.5625em; // 985px
+$desktop-lg-layout: 75em;      // 1200px
+
+// Additional breakpoints for cc
+$desktop-xl-layout: 100em;      // 1600px
+
+*/
+
+/* ---- end _breakpoint-new.scss ---- */

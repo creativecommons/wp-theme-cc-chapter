@@ -1,4 +1,7 @@
-.cc-team-shortcode {
+ 
+/* ### --- _shortcodes.scss ==================================================================== */
+ 
+ .cc-team-shortcode {
   h2.cc-team-heading {
     padding-top: 30px;
     font-size: 2em;
@@ -14,10 +17,10 @@
 		flex-direction: row;
     list-style: none;
 		align-content: stretch;
-    @include breakpoint($tablet-sm-layout) {
+    @include breakpoint(tablet-sm-layout) {
       justify-content: space-between;
     }
-		@include breakpoint($desktop-lg-layout){
+		@include breakpoint(desktop-lg-layout){
 			&::after {
 		  	content: "";
 		  	flex: 0 1 30%;
@@ -28,10 +31,10 @@
 	    flex: 0 1 330px;
       padding-bottom: 50px;
       position: relative;
-			@include breakpoint($tablet-sm-layout) {
+			@include breakpoint(tablet-sm-layout) {
 		    flex: 0 1 48%;
 			}
-			@include breakpoint($desktop-lg-layout){
+			@include breakpoint(desktop-lg-layout){
 		    flex: 0 1 30%;
 			}
       background-color: $grey-lighter;
@@ -119,7 +122,7 @@ blockquote.cc-short-block {
 	margin-bottom: 70px !important;
 	.blockquote-image {
 		width: 100%;
-		@include breakpoint($tablet-md-layout) {
+		@include breakpoint(tablet-md-layout) {
 			width: 30%;
 		}
     display: block;
@@ -130,7 +133,7 @@ blockquote.cc-short-block {
 	}
 	.clear-all {
 		clear: both;
-		@include breakpoint($tablet-md-layout) {
+		@include breakpoint(tablet-md-layout) {
 			clear: none;
 		}
 	}
@@ -143,7 +146,7 @@ blockquote.cc-short-block {
 			&::before {
 				text-align:center;
 			}
-			@include breakpoint($tablet-md-layout) {
+			@include breakpoint(tablet-md-layout) {
 				width:70%;
 				margin: 0px;
 				text-align:left;
@@ -187,7 +190,7 @@ blockquote.cc-short-block {
 		@include font-weight($fw-semi-bold);
     font-style: normal;
     text-align: center;
-		@include breakpoint($tablet-md-layout) {
+		@include breakpoint(tablet-md-layout) {
 	    float: left;
 		}
 		a {
@@ -205,7 +208,7 @@ blockquote.cc-short-block {
 	margin-bottom: 60px;
 	padding: 60px 10px;
 	padding-bottom: 90px;
-	@include breakpoint($tablet-sm-layout) {
+	@include breakpoint(tablet-sm-layout) {
 		padding: 60px;
 		padding-bottom: 85px;
 	}
@@ -231,7 +234,7 @@ blockquote.cc-short-block {
 		float: right;
 		margin-right: 27px;
     text-transform: capitalize !important;
-		@include breakpoint($tablet-sm-layout) {
+		@include breakpoint(tablet-sm-layout) {
 			margin-right: 0px;
 		}
 
@@ -241,3 +244,6 @@ blockquote.cc-short-block {
     }
 	}
 }
+ 
+/* ### --- END _shortcodes.scss ==================================================================== */
+ 

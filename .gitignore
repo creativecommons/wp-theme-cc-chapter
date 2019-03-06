@@ -8,5 +8,7 @@ npm-debug.log
 
 maps/
 *.css.map
+/scss/app.css
+/backup-scss/*
 
 /vendor/

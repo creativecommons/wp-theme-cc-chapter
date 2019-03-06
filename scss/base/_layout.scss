@@ -1,4 +1,8 @@
-body {
+ 
+/* ### ---  _layout.scss ==================================================================== */
+ 
+ 
+ body {
   &::before,
   &::after {
     display: none !important;
@@ -16,9 +20,9 @@ body {
 }
 
 .site-header {
-  background-color: $blue-brand;
+/*  background-color: $blue-brand; */
   box-shadow: 0px 0 4px 0 rgba($black, 0.8);
-  height: 70px;
+  /*height: 70px; */
   padding: 0;
   width: 100%;
   z-index: 302;
@@ -80,9 +84,9 @@ body {
     }
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     background-image: none;
-    background-color: $blue-brand;
+/*    background-color: $blue-brand; */
     box-shadow: none;
     height: 130px;
 
@@ -107,21 +111,22 @@ body {
 body.admin-bar .site-header.sticky {
   margin-top: 0px;
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
     margin-top: 46px;
   }
 
-  @include breakpoint ($tablet-md-layout) {
+  @include breakpoint (tablet-md-layout) {
     margin-top: 32px;
   }
 }
 
 .site-header-main {
+/*
   @include content-constrained();
   height: 100%;
   justify-content: space-between;
   position: relative;
-
+*/
   .main-navigation {
     margin: 0 -20px;
   }
@@ -135,7 +140,7 @@ body.admin-bar .site-header.sticky {
     > .menu-toggle { margin-right: 20px; }
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     background-image: linear-gradient(90deg, $blue-brand, $blue-brand, $blue-brand);
     background-size: 100% 130px; /* 130px: maximum height of site-header */
     background-position-y: bottom;
@@ -143,8 +148,6 @@ body.admin-bar .site-header.sticky {
     &::before,
     &::after {
       bottom: 0;
-      border-radius: 100px / 10px;
-      box-shadow: 0 0 4px rgba($black, 0.8);
       content: "";
       left: 1%;
       position: absolute;
@@ -174,12 +177,12 @@ body.admin-bar .site-header.sticky {
     align-self: flex-end;
     margin: 0 0 20px 0;
 
-    @include breakpoint ($desktop-sm-layout) {
+    @include breakpoint (desktop-sm-layout) {
       margin-bottom: 24px;
       width: 60%;
     }
 
-    @include breakpoint ($desktop-md-layout) {
+    @include breakpoint (desktop-md-layout) {
       width: 60%;
     }
   }
@@ -206,7 +209,7 @@ body.admin-bar .site-header.sticky {
     }
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     margin: 0 0 20px 0;
     transition: all 0.4s ease;
   }
@@ -234,7 +237,10 @@ body.admin-bar .site-header.sticky {
   max-width: none;
 }
 
-.site-content { padding: 0; }
+.site-content {     
+	margin-top: 35px;
+    padding: 0; 
+}
 
 .content-area {
   float: none;
@@ -245,7 +251,7 @@ body.admin-bar .site-header.sticky {
     @include content-constrained();
     margin-top: 40px;
 
-    @include breakpoint ($desktop-sm-layout) {
+    @include breakpoint (desktop-sm-layout) {
       display: flex;
       justify-content: space-between;
     }
@@ -254,7 +260,7 @@ body.admin-bar .site-header.sticky {
 
 .wrapper-main {
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     flex: 1 0 70%;
   }
 }
@@ -264,7 +270,7 @@ body.admin-bar .site-header.sticky {
 // =================================
 .wrapper-sidebar {
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     flex: 0 0 30%;
     padding-left: $gutter * 2;
   }
@@ -326,25 +332,26 @@ body.admin-bar .site-header.sticky {
 .cc-footer {
   $column-space: $gutter / 2;
 
-  @include content-constrained();
-  padding: 10px 0 10px 0;
+  @include content-constrained(); 
+  padding: 35px 15px 25px 15px;
   display: flex;
-  flex-direction: column;
-
-  @include breakpoint ($tablet-sm-layout) {
+  flex-direction: row;
+	margin-left:auto;
+	margin-right:auto;
+  @include breakpoint (tablet-sm-layout) {
     padding: 35px 0 25px 0;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
 
-  @include breakpoint ($desktop-md-layout) {
+  @include breakpoint (desktop-md-layout) {
   }
 
   .column {
     margin: 5px 0;
 
-    @include breakpoint ($tablet-sm-layout) {
+    @include breakpoint (tablet-sm-layout) {
       width: 33.333%;
       margin: 0;
       padding-left: $column-space;
@@ -352,7 +359,7 @@ body.admin-bar .site-header.sticky {
       padding-bottom: 5px;
     }
 
-    @include breakpoint ($desktop-md-layout) {
+    @include breakpoint (desktop-md-layout) {
       width: 25%;
     }
   }
@@ -393,14 +400,16 @@ body.admin-bar .site-header.sticky {
       }
     }
 
-    @include breakpoint ($tablet-sm-layout) {
+    @include breakpoint (desktop-md-layout) {
       order: 0;
       padding-bottom: 0;
 
       .cc-footer-logo {
         display: block;
       }
-
+	.cc-footer-contact {
+		display:block;
+		}
       .cc-footer-links {
         display: block;
 
@@ -424,7 +433,7 @@ body.admin-bar .site-header.sticky {
       }
     }
 
-    @include breakpoint ($desktop-md-layout) {
+    @include breakpoint (desktop-md-layout) {
       .cc-footer-links {
         .menu-footer-links-container {
           text-align: left;
@@ -439,8 +448,8 @@ body.admin-bar .site-header.sticky {
   }
 
   .column.cc-footer-contact {
-    display: none;
-
+    display: block;
+	
     address {
       display: block;
       @include font-weight($fw-semi-bold);
@@ -466,21 +475,21 @@ body.admin-bar .site-header.sticky {
       }
     }
 
-    @include breakpoint ($tablet-sm-layout) {
+    @include breakpoint (tablet-sm-layout) {
       display: block;
     }
   }
 
   .column.cc-footer-license {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     .license-icons {
       font-size: px2rem(30);
       margin-top: 5px;
       margin-right: 10px;
       margin-bottom: 0.25em;
-      text-align: center;
+      text-align: left;
       white-space: nowrap;
       flex-shrink: 0;
 
@@ -503,7 +512,7 @@ body.admin-bar .site-header.sticky {
       display: none;
     }
 
-    @include breakpoint ($tablet-sm-layout) {
+    @include breakpoint (tablet-sm-layout) {
       display: block;
 
       .license-icons {
@@ -518,7 +527,7 @@ body.admin-bar .site-header.sticky {
   .column.cc-footer-search {
     display: none;
 
-    @include breakpoint ($desktop-md-layout) {
+    @include breakpoint (desktop-md-layout) {
       display: block;
       width: 20%;
 
@@ -538,7 +547,7 @@ body.admin-bar .site-header.sticky {
     margin-top: 0;
   }
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
     .column.cc-footer-main {
       padding-left: 0;
     }
@@ -548,7 +557,7 @@ body.admin-bar .site-header.sticky {
     }
   }
 
-  @include breakpoint ($desktop-md-layout) {
+  @include breakpoint (desktop-md-layout) {
     .column.cc-footer-main {
       padding-left: 0;
     }
@@ -605,3 +614,18 @@ body.admin-bar .site-header.sticky {
 .comments-area {
 	@include visually-hidden();  
 }
+
+@include breakpoint (desktop-sm-layout) {
+	/* small fixes */
+	.site-header {
+		box-shadow: none;
+	}
+	.hero-video {
+		width: 100%;
+	}
+}
+@include breakpoint (tablet-sm-layout) {
+
+}
+/* ### --- END _layout.scss ==================================================================== */
+ 
