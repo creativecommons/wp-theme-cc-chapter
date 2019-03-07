@@ -1,3 +1,7 @@
+ 
+/* ### --- _popups.scss ==================================================================== */
+ 
+ 
 .pum-overlay {
 
   .pum-container {
@@ -28,7 +32,7 @@
         position: relative;
         top: -10%;
 
-        @include breakpoint($desktop-sm-layout){
+        @include breakpoint(desktop-sm-layout){
           left: 0;
           margin-bottom: 0;
           max-width: 100%;
@@ -38,11 +42,11 @@
       .content-container {
 
         max-width: 90%;
-        @include breakpoint($tablet-sm-layout) {
+        @include breakpoint(tablet-sm-layout) {
           max-width: 80%;
           margin-top: -30px;
         }
-        @include breakpoint($desktop-lg-layout){
+        @include breakpoint(desktop-lg-layout){
           max-width: 1120px;
           margin-top: -70px;
         }
@@ -98,7 +102,7 @@
             padding: 18px 0px;
           }
 
-          @include breakpoint ($tablet-md-layout) {
+          @include breakpoint (tablet-md-layout) {
             font-size: px2rem(20);
             padding: 18px 0px;
 
@@ -113,12 +117,12 @@
             }
           }
 
-          @include breakpoint ($desktop-sm-layout) {
+          @include breakpoint (desktop-sm-layout) {
             font-size: px2rem(22);
             margin-bottom: 30px;
           }
 
-          @include breakpoint ($desktop-lg-layout) {
+          @include breakpoint (desktop-lg-layout) {
             font-size: px2rem(24);
           }
         }
@@ -161,12 +165,12 @@
             font-weight: $fw-bold;
           }
 
-          @include breakpoint ($tablet-sm-layout) {
+          @include breakpoint (tablet-sm-layout) {
             font-size: px2rem($fz-h4);
             line-height: 1.5em;
           }
 
-          @include breakpoint ($desktop-sm-layout) {
+          @include breakpoint (desktop-sm-layout) {
             font-size: px2rem($fz-xlg);
             line-height: 1.5em;
           }
@@ -175,3 +179,6 @@
     }
   }
 }
+ 
+/* ### --- END _popups.scss ==================================================================== */
+ 

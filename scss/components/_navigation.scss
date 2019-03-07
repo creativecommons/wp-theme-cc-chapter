@@ -1,4 +1,8 @@
-//
+ 
+/* ### --- _navigation.scss ==================================================================== */
+ 
+
+ //
 // Primary menu
 // =================================
 .main-navigation {
@@ -40,11 +44,11 @@
     }
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     display: block;
   }
 
-  @include breakpoint ($desktop-md-layout) {
+  @include breakpoint (desktop-md-layout) {
     font-size: px2rem($fz-lg);
 
     a {
@@ -53,7 +57,7 @@
     }
   }
 
-  @include breakpoint ($desktop-lg-layout) {
+  @include breakpoint (desktop-lg-layout) {
     font-size: px2rem($fz-xlg);
   }
 }
@@ -62,7 +66,6 @@
 // Mobile menu
 // =================================
 .mobile-navigation {
-  background: #F8722A;
   font-family: $ff-source-sans-pro;
   font-size: px2rem($fz-lg);
   text-align: center;
@@ -95,7 +98,7 @@
     margin-bottom: 10px;
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     display: none;
   }
 }
@@ -194,7 +197,7 @@
 }
 
 // Desktop
-@include breakpoint ($desktop-sm-layout) {
+@include breakpoint (desktop-sm-layout) {
   .secondary-navigation {
     display: block;
     position: absolute;
@@ -232,7 +235,7 @@
         color: $white !important;
       }
 
-      &[href*="cc-global-network"] {
+      &[href*="global-affiliate-network"] {
         @include add-fontello-icon('\e806') {
           font-size: 1.3em;
           line-height: 0.5em;
@@ -247,7 +250,7 @@
     }
 
     // Desktop
-    @include breakpoint ($desktop-sm-layout) {
+    @include breakpoint (desktop-sm-layout) {
       display: flex;
       justify-content: flex-end;
       flex-wrap: nowrap;
@@ -261,12 +264,13 @@
 
         &::after {
           color: rgba($white, 0.55);
-          content: '|';
+         /* content: '|'; */
           display: inline-block;
           position: absolute;
           right: -0.1em;
           top: 0.35em;
         }
+		
       }
     }
   }
@@ -281,7 +285,7 @@
 }
 
 // Desktop
-@include breakpoint ($desktop-sm-layout) {
+@include breakpoint (desktop-sm-layout) {
   .social-navigation {
     margin: 0 !important;
     position: absolute;
@@ -442,7 +446,7 @@
     @include font-weight($fw-semi-bold);
   }
 
-  @include breakpoint($tablet-sm-layout) {
+  @include breakpoint(tablet-sm-layout) {
     a {
       padding: 0 10px;
     }
@@ -546,3 +550,7 @@
 		display: inline !important;
 	}
 }
+
+ 
+/* ### --- END _navigation.scss ==================================================================== */
+ 
