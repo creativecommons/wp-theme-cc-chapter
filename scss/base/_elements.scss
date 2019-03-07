@@ -1,3 +1,5 @@
+/* ### --- _elements.scss ==================================================================== */
+
 /**
  * @file
  * Style for HTML elements.
@@ -12,7 +14,7 @@ body {
   font-size: px2rem($fz-base - 3);
   line-height: $line-height-base;
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
     font-size: px2rem($fz-base);
     line-height: $line-height-base;
   }
@@ -45,7 +47,7 @@ h1, .h1 {
   font-size: px2rem(38);
   line-height: 0.8em;
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
     font-size: px2rem($fz-h1);
     line-height: 1em;
   }
@@ -77,7 +79,7 @@ strong { @include font-weight($fw-bold); }
   @include font-weight($fw-normal);
   line-height: 1em;
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
     font-size: px2rem($fz-hero);
   }
 }
@@ -88,7 +90,7 @@ strong { @include font-weight($fw-bold); }
   @include font-weight($fw-normal);
   line-height: 1em;
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
     font-size: px2rem($fz-big);
   }
 }
@@ -190,7 +192,7 @@ input[type="submit"] {
       display: none;
     }
 
-    @include breakpoint ($tablet-sm-layout) {
+    @include breakpoint (tablet-sm-layout) {
       .search-field {
         display: block;
       }
@@ -404,7 +406,7 @@ blockquote {
     width: 55%;
     margin: 0;
 
-    @include breakpoint ($tablet-sm-layout) {
+    @include breakpoint (tablet-sm-layout) {
       width: 50%;
     }
 
@@ -463,11 +465,15 @@ blockquote {
     display:inline-block;
     width: 60%;
     padding: 7.8px !important;
-    @include breakpoint($desktop-sm-layout) {
+    @include breakpoint(desktop-sm-layout) {
       width: 50%;
     }
-    @include breakpoint($desktop-md-layout) {
+    @include breakpoint(desktop-md-layout) {
       width: 40%;
     }
   }
 }
+
+ 
+/* ### --- END _elements.scss ==================================================================== */
+ 
