@@ -1,5 +1,5 @@
 === Creative Commons - Chapter WordPress theme ===
-Contributors: Quentin Rogers, Dale McGladdery, cctimidrobot, hugosolar
+Contributors: quentinrogers, mackaffinity, cctimidrobot, hugosolar
 Tags: CreativeCommons
 Requires at least: 4.5+
 Tested up to: 5.0.3
