@@ -1,4 +1,6 @@
-
+ 
+/* ### --- _widgets.scss ==================================================================== */
+ 
 //
 // General
 // =================================
@@ -11,11 +13,15 @@
   font-size: inherit;
   font-size: inherit;
   line-height: inherit;
-  margin-bottom: 3.230769231em;
-  padding-top: 0;
+  margin-bottom: 10px;
+ /* padding: 0 20px; */
 }
 
 //Sidebar General
+.sidebar { 
+	min-height:250px;
+    padding: 20px 0;
+}
 .wrapper-sidebar {
 	.widget {
 		font-size: px2rem($fz-sm);
@@ -75,7 +81,7 @@
   > div {
     /* margin-bottom: 10px; */
 
-    @include breakpoint ($tablet-sm-layout) {
+    @include breakpoint (tablet-sm-layout) {
     /*  margin-bottom: 30px; */
     }
   }
@@ -111,12 +117,12 @@
     margin-bottom: 15px;
     text-transform: uppercase;
 
-    @include breakpoint ($desktop-md-layout) {
+    @include breakpoint (desktop-md-layout) {
       float: left;
       width: 300px;
     }
 
-    @include breakpoint ($desktop-lg-layout) {
+    @include breakpoint (desktop-lg-layout) {
       font-size: px2rem($fz-hero);
       line-height: 0.85em;
       width: 400px;
@@ -133,9 +139,9 @@
       @include font-weight($fw-bold);
     }
 
-    @include breakpoint ($desktop-md-layout) { margin-left: 300px; }
+    @include breakpoint (desktop-md-layout) { margin-left: 300px; }
 
-    @include breakpoint ($desktop-lg-layout) { margin-left: 400px; }
+    @include breakpoint (desktop-lg-layout) { margin-left: 400px; }
   }
 
   .row {
@@ -147,7 +153,7 @@
 
     &:last-child { margin-bottom: 55px; }
 
-    @include breakpoint($tablet-md-layout) {
+    @include breakpoint(tablet-md-layout) {
       width: 30%;
       float: left;
       margin-bottom: 35px;
@@ -158,7 +164,7 @@
       }
     }
 
-    @include breakpoint($desktop-sm-layout) {
+    @include breakpoint(desktop-sm-layout) {
       padding-left: $gutter / 2 !important;
       padding-right: $gutter / 2 !important;
     }
@@ -188,7 +194,7 @@
 
     &:last-child { margin-bottom: 55px; }
 
-    @include breakpoint($tablet-md-layout) {
+    @include breakpoint(tablet-md-layout) {
       width: 33.33%;
       float: left;
       margin-bottom: 35px;
@@ -199,7 +205,7 @@
       }
     }
 
-    @include breakpoint($desktop-sm-layout) {
+    @include breakpoint(desktop-sm-layout) {
       padding-left: $gutter / 2 !important;
       padding-right: $gutter / 2 !important;
     }
@@ -292,7 +298,7 @@
     }
   }
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
 
     h2 {
       font-size: px2rem($fz-xlg);
@@ -305,7 +311,7 @@
     }
   }
 
-  @include breakpoint ($desktop-md-layout) {
+  @include breakpoint (desktop-md-layout) {
 
     li { flex-basis: 15%; }
   }
@@ -386,7 +392,7 @@
       a { @include link-colors($colour-link-hover, $colour-tertiary, $colour-link-hover, $colour-tertiary); }
     }
 
-    @include breakpoint ($desktop-sm-layout) {
+    @include breakpoint (desktop-sm-layout) {
       .item {
         align-items: stretch;
         display: flex;
@@ -473,7 +479,7 @@
       a { @include link-colors($colour-link-hover, $colour-tertiary, $colour-link-hover, $colour-tertiary); }
     }
 
-    @include breakpoint ($tablet-sm-layout) {
+    @include breakpoint (tablet-sm-layout) {
       align-items: stretch;
       display: flex;
       flex-flow: row wrap;
@@ -515,7 +521,7 @@
       }
     }
 
-    @include breakpoint ($desktop-sm-layout) {
+    @include breakpoint (desktop-sm-layout) {
       flex-wrap: nowrap;
 
       .item {
@@ -540,7 +546,7 @@
 		img {
 			    padding-bottom: 20px;
 		}
-		@include breakpoint($desktop-sm-layout) {
+		@include breakpoint(desktop-sm-layout) {
 			img {
 	    padding-bottom: 0px;
 			}
@@ -646,13 +652,13 @@
 						width:100%;
 					}
 			    flex: 0 1 100%;
-					@include breakpoint($tablet-sm-layout) {
+					@include breakpoint(tablet-sm-layout) {
 				    flex: 0 1 48%;
 					}
 				}
 				.right-side-wrapper {
 			    flex: 0 1 100%;
-						@include breakpoint($tablet-sm-layout) {
+						@include breakpoint(tablet-sm-layout) {
 					    flex: 0 1 49%;
 						}
 					.excerpt {
@@ -698,14 +704,14 @@
 		      line-height: 1em;
 					margin-bottom: 10px;
 
-          @include breakpoint ($desktop-sm-layout) {
+          @include breakpoint (desktop-sm-layout) {
             width: 200px;
           }
 		    }
 		  }
 
       .item {
-        @include breakpoint ($tablet-sm-layout) {
+        @include breakpoint (tablet-sm-layout) {
           width: 50%;
           float: left;
           &:nth-child(2n) { padding-left: floor($gutter / 2); }
@@ -717,7 +723,7 @@
           &:not(:last-child) { padding-right: ceil($gutter / 2); }
         }
         .thumbnail {
-          @include breakpoint ($tablet-sm-layout) {
+          @include breakpoint (tablet-sm-layout) {
             // max-width: 270px;
             height: 155px;
           }
@@ -737,7 +743,7 @@
         position: relative;
         padding: 20px 20px 60px 20px;
 
-        @include breakpoint ($tablet-sm-layout) {
+        @include breakpoint (tablet-sm-layout) {
           height: 195px;
           // max-width: 270px;
           padding-bottom: 20px;
@@ -786,7 +792,7 @@
       position:absolute;
       left: -3px;
       top: -8px;
-			@include breakpoint($desktop-sm-layout) {
+			@include breakpoint(desktop-sm-layout) {
 	      top: -7px !important;
 			}
       font-size: px2rem($fz-h3);
@@ -798,7 +804,7 @@
       font-size: px2rem($fz-sm);
       width: 52%;
 			padding: 10px 5px 9px 5px;
-			@include breakpoint($desktop-sm-layout) {
+			@include breakpoint(desktop-sm-layout) {
 	      width: 100%;
 			}
       line-height: 1.0em;
@@ -817,7 +823,7 @@
 			}
     }
     .input-group-btn {
-			@include breakpoint($desktop-sm-layout) {
+			@include breakpoint(desktop-sm-layout) {
 				float: left;
 				margin-top:10px;
 			}
@@ -844,7 +850,7 @@
       position:absolute;
       left: -3px;
       top: -8px;
-      @include breakpoint($desktop-sm-layout) {
+      @include breakpoint(desktop-sm-layout) {
         top: -7px !important;
       }
       font-size: px2rem($fz-h3);
@@ -867,7 +873,7 @@
     font-size: px2rem($fz-sm);
     width: 52%;
     padding: 10px 5px 9px 5px;
-    @include breakpoint($desktop-sm-layout) {
+    @include breakpoint(desktop-sm-layout) {
       width: 100%;
     }
     line-height: 1.0em;
@@ -964,7 +970,7 @@
     z-index: 2;
   }
 
-  @include breakpoint ($tablet-md-layout) {
+  @include breakpoint (tablet-md-layout) {
 
     * + * { margin-top: 0; }
 
@@ -1028,7 +1034,7 @@
     }
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     #input_7_1 { width: 290px; }
   }
 }
@@ -1160,7 +1166,7 @@
     }
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
     font-size: px2rem($fz-xlg);
     line-height: 1.5em;
 
@@ -1233,3 +1239,7 @@
 		}
 	}
 }
+
+ 
+/* ### --- END _widgets.scss ==================================================================== */
+ 

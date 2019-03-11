@@ -1,4 +1,6 @@
-
+ 
+/* ### ---  _pages.scss ==================================================================== */
+ 
 //
 // General
 // =================================
@@ -14,7 +16,7 @@ h1.entry-title {
   line-height: 0.8em;
   margin-bottom: 25px;
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
     font-size: px2rem($fz-h1);
     line-height: 1em;
   }
@@ -109,7 +111,7 @@ h1.entry-title {
 .cc-global-network{
   background-color: $blue-light;
   padding: 55px 10px;
-  @include breakpoint($tablet-sm-layout) {
+  @include breakpoint(tablet-sm-layout) {
     padding: 55px;
   }
   h2{
@@ -143,7 +145,7 @@ h1.entry-title {
     flex-direction: row;
     list-style: none;
     align-content: stretch;
-    @include breakpoint($desktop-lg-layout){
+    @include breakpoint(desktop-lg-layout){
       &::after {
         content: "";
         flex: 0 1 18%;
@@ -156,10 +158,10 @@ h1.entry-title {
       align-items: center;
       justify-content: center;
       flex: 0 1 46%;
-      @include breakpoint($tablet-sm-layout) {
+      @include breakpoint(tablet-sm-layout) {
         flex: 0 1 23%;
       }
-      @include breakpoint($desktop-lg-layout){
+      @include breakpoint(desktop-lg-layout){
         flex: 0 1 18%;
       }
       margin-bottom: 25px;
@@ -176,7 +178,7 @@ h1.entry-title {
   background-color: $blue-light;
   padding: 55px 20px;
 
-  @include breakpoint($tablet-sm-layout) {
+  @include breakpoint(tablet-sm-layout) {
     padding: 55px;
   }
   h2{
@@ -205,7 +207,7 @@ h1.entry-title {
         font-weight: bold;
         font-size: px2rem($fz-xlg);
         margin-bottom: 25px;
-        @include breakpoint($tablet-sm-layout) {
+        @include breakpoint(tablet-sm-layout) {
           flex: 0 1 40%;
         }
         img {
@@ -261,7 +263,6 @@ h1.entry-title {
 body.home {
 
   .content-area {
-    background-image: radial-gradient(ellipse farthest-corner, $white, #F4F4F4);
     padding-top: 40px;
 
   }
@@ -281,14 +282,14 @@ body.home {
       line-height: 0.8em;
       margin-bottom: 20px;
 
-      @include breakpoint ($tablet-sm-layout) {
+      @include breakpoint (tablet-sm-layout) {
         font-size: px2rem($fz-h1);
         line-height: 1em;
       }
     }
 
 
-    @include breakpoint ($desktop-sm-layout) {
+    @include breakpoint (desktop-sm-layout) {
       @include clearfix();
 
       > div:nth-child(1) {
@@ -314,7 +315,7 @@ body.author{
         float: left;
         width: 100%;
         margin-right: 0px;
-        @include breakpoint($tablet-sm-layout) {
+        @include breakpoint(tablet-sm-layout) {
           width: 30%;
           margin-right: 35px;
         }
@@ -405,7 +406,7 @@ body.author{
       }
     }
     .bio {
-      @include breakpoint($tablet-sm-layout) {
+      @include breakpoint(tablet-sm-layout) {
         padding-right: 55px;
       }
       .author-first-last {
@@ -432,14 +433,14 @@ body.author{
           margin-bottom: 20px;
         }
         flex: 0 1 100%;
-        @include breakpoint($tablet-sm-layout) {
+        @include breakpoint(tablet-sm-layout) {
           flex: 0 1 30%;
         }
       }
       .entry-content {
         flex: 0 1 100%;
         position: relative;
-        @include breakpoint($tablet-sm-layout) {
+        @include breakpoint(tablet-sm-layout) {
           flex: 0 1 70%;
           padding-left: 25px;
         }
@@ -494,8 +495,8 @@ body.search {
   .site-main > article {
     margin-bottom: 40px;
 
-    @include breakpoint ($tablet-sm-layout) { margin-bottom: 60px; }
-    @include breakpoint ($desktop-sm-layout) { margin-bottom: 80px; }
+    @include breakpoint (tablet-sm-layout) { margin-bottom: 60px; }
+    @include breakpoint (desktop-sm-layout) { margin-bottom: 80px; }
   }
 }
 
@@ -529,14 +530,14 @@ body.archive {
         margin-bottom: 20px;
       }
       flex: 0 1 100%;
-      @include breakpoint($tablet-sm-layout) {
+      @include breakpoint(tablet-sm-layout) {
         flex: 0 1 30%;
       }
     }
     .entry-content {
       flex: 0 1 100%;
       position: relative;
-      @include breakpoint($tablet-sm-layout) {
+      @include breakpoint(tablet-sm-layout) {
         flex: 0 1 70%;
         padding-left: 25px;
       }
@@ -598,7 +599,7 @@ body.archive {
 //      border: 1px solid $grey-dark;
 //      background-color: $grey-light;
     }
-    @include breakpoint($tablet-md-layout){
+    @include breakpoint(tablet-md-layout){
       .left-column {
         margin-right:40px;
       }
@@ -882,7 +883,7 @@ body.page-id-48781 {
     }
   }
 
-  @include breakpoint ($tablet-sm-layout) {
+  @include breakpoint (tablet-sm-layout) {
 
     .gf_page_steps {
       width: 380px;
@@ -936,7 +937,7 @@ body.page-id-48781 {
     }
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
 
     #input_3_1,
     #input_3_9 {
@@ -956,7 +957,7 @@ body.page-id-48781 {
     }
   }
 
-  @include breakpoint ($desktop-md-layout) {
+  @include breakpoint (desktop-md-layout) {
 
     #input_3_1,
     #input_3_9 {
@@ -999,14 +1000,14 @@ body.page-id-48781 {
           margin-bottom: 20px;
         }
         flex: 0 1 100%;
-        @include breakpoint($tablet-sm-layout) {
+        @include breakpoint(tablet-sm-layout) {
           flex: 0 1 30%;
         }
       }
       .entry-content {
         flex: 0 1 100%;
         position: relative;
-        @include breakpoint($tablet-sm-layout) {
+        @include breakpoint(tablet-sm-layout) {
           flex: 0 1 70%;
           padding-left: 25px;
         }
@@ -1074,7 +1075,7 @@ body.error404 {
     padding-top: 0;
   }
 
-  @include breakpoint ($desktop-sm-layout) {
+  @include breakpoint (desktop-sm-layout) {
 
     #page {
       min-height: 100%;
@@ -1116,7 +1117,7 @@ body.error404 {
     width: 100%;
     padding: 0 10px;
     padding-bottom: 50px;
-    @include breakpoint($desktop-sm-layout){
+    @include breakpoint(desktop-sm-layout){
       width: 50%;
       float: left;
 
@@ -1139,7 +1140,9 @@ body.error404 {
   }
 }
 
-
+ 
+/* ### --- END _pages.scss ==================================================================== */
+ 
 
 
 
