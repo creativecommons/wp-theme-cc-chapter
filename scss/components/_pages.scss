@@ -270,6 +270,8 @@ body.home {
   .site-main {
     @include content-constrained();
     margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .entry-title { @include visually-hidden(); }

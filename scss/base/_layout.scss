@@ -249,6 +249,8 @@ body.admin-bar .site-header.sticky {
 
   body:not(.home) & {
     @include content-constrained();
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 40px;
 
     @include breakpoint (desktop-sm-layout) {

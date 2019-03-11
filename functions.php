@@ -49,8 +49,8 @@ function cc_chapter_enqueue_scripts() {
 	wp_enqueue_style( 'cc-google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Roboto+Condensed:400,700' );
 	wp_enqueue_style( 'cc-fontello', get_stylesheet_directory_uri() . '/fonts/fontello/css/cc-fontello.css' );
 	wp_enqueue_style( 'cc-style', get_stylesheet_directory_uri() . '/css/app.css', array( 'parent-style', 'cc-google-fonts', 'cc-fontello' ), CC_CSS_RELEASE_SERIAL_NUMBER );
-	wp_enqueue_style( 'header-style', get_stylesheet_directory_uri() . '/css/header.css', array(), CC_CSS_RELEASE_SERIAL_NUMBER );
-	wp_enqueue_style( 'nav-style', get_stylesheet_directory_uri() . '/css/navigation.css', array(), CC_CSS_RELEASE_SERIAL_NUMBER );
+	//wp_enqueue_style( 'header-style', get_stylesheet_directory_uri() . '/css/header.css', array(), CC_CSS_RELEASE_SERIAL_NUMBER );
+	//wp_enqueue_style( 'nav-style', get_stylesheet_directory_uri() . '/css/navigation.css', array(), CC_CSS_RELEASE_SERIAL_NUMBER );
 
 	wp_enqueue_script( 'cc-breakpoint-body-class', get_stylesheet_directory_uri() . '/js/breakpoint-body-class.js', array( 'jquery' ), CC_CSS_RELEASE_SERIAL_NUMBER, true );
 	wp_enqueue_script( 'cc-common', get_stylesheet_directory_uri() . '/js/cc.js', array( 'jquery' ), CC_CSS_RELEASE_SERIAL_NUMBER, true );

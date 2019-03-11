@@ -10,7 +10,7 @@ function cc_chapter_setup_default_install($blog_id)
     switch_to_blog($blog_id);
 
     // Change to a different theme.
-    switch_theme("cc-chapter");
+    switch_theme("wp-theme-cc-chapter");
 
     // Set country code
     if (!empty($_POST['blog']['country_code'])) {
@@ -28,8 +28,8 @@ function cc_chapter_setup_default_install($blog_id)
     switch_to_blog(1);
     $the_query = cc_get_default_pages_query();
     $default_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-
-    switch_to_blog($blog_id);
+    restore_current_blog();
+    //switch_to_blog($blog_id);
     while ($the_query->have_posts()) {
         // set page creation vars
         $the_query->the_post();
@@ -65,7 +65,7 @@ function cc_chapter_setup_default_install($blog_id)
     // IMPORT POSTS
     foreach ($cats as $cat) {
         switch_to_blog(1);
-        $the_query = cc_widgets_get_featured_posts_by_taxonomy_query($cat, 'default', 5);
+        $the_query = cc_widgets::get_featured_posts_by_taxonomy_query($cat, 'default', 5);
         // returned objects do not include cat or terms
         // need to take a post_id (while in blog 1) and query it for Hero and Highlight and assign them if neccessary
 
@@ -133,7 +133,15 @@ function cc_chapter_render_template($template_file, $variables = array())
     // End buffering and return its contents
     return ob_get_clean();
 }
-
+function cc_get_default_pages_query() {
+    $default_pages = new WP_Query(array(
+        'post_type' => 'page',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'category_name' => 'default-page'
+    ));
+    return $default_pages;
+}
 
 function cc_chapter_create_default_page($page_content, $page_title, $page_name, $page_excerpt)
 {
