@@ -9,6 +9,14 @@ require STYLESHEETPATH . '/inc/widgets/cc-videos.php';
 require STYLESHEETPATH . '/inc/widgets/cc-news.php';
 require STYLESHEETPATH . '/inc/widgets/cc-header-links.php';
 require STYLESHEETPATH . '/inc/widgets/cc-footer-links.php';
+require STYLESHEETPATH . '/inc/widgets/cc-text-banner.php';
+require STYLESHEETPATH . '/inc/widgets/cc-news-widget.php';
+require STYLESHEETPATH . '/inc/widgets/cc-columns-widgets.php';
+require STYLESHEETPATH . '/inc/widgets/cc-widget-title.php';
+require STYLESHEETPATH . '/inc/widgets/cc-widget-programs.php';
+require STYLESHEETPATH . '/inc/widgets/cc-widget-work.php';
+require STYLESHEETPATH . '/inc/widgets/cc-widget-event.php';
+require STYLESHEETPATH . '/inc/widgets/cc-widget-video-list.php';
 
 class cc_widgets {
 	private static $instance;

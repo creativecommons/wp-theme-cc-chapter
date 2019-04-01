@@ -80,11 +80,13 @@ class CreativeCommons_Videos extends WP_Widget {
 							if ( $cc_video_content_display == 'hide' ) {
 								?>
 								 style="display:none;" <?php } ?>><div class="video">
-																					  <?php
-																						if ( $cc_video_content_display == 'excerpt' ) {
-																							print the_excerpt(); } else {
-																																						print the_content(); }
-																							?>
+								<?php
+								if ( $cc_video_content_display == 'excerpt' ) {
+									print the_excerpt(); 
+								} else {
+									print the_content(); 
+								}
+									?>
 							</div>
 							</div>
 							<h3 class="title"><a href="<?php print $url; ?>"><?php print get_the_title(); ?></a></h3>

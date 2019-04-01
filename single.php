@@ -7,7 +7,8 @@
  * @since Twenty Sixteen 1.0
  */
 
-get_header(); ?>
+	get_header(); 
+?>
 
 <div id="primary" class="content-area">
   <div id="wrapper-main" class="wrapper-main">

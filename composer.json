@@ -23,10 +23,14 @@
     ],
     "require": {
         "composer/installers":"~1.0",
-        "wpackagist-theme/twentysixteen":"1.8"
+        "wpackagist-theme/twentysixteen":"1.8",
+        "felipelavinz/queulat": "dev-master"
     },
     "extra": {
-        "installer-name":"cc-chapter"
+        "installer-name":"cc-chapter",
+        "installer-paths": {
+            "../../mu-plugins/{$name}": [ "felipelavinz/queulat" ]
+        }
     },
     "scripts": {
         "compat":"phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",

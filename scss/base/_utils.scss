@@ -19,7 +19,12 @@
     transform: translate(-58%, -58%);
   }
 }
-
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
 .hide-on-mobile {
   @include breakpoint (max-width $tablet-sm-layout - 0.001em) {
     display: none;

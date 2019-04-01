@@ -10,8 +10,26 @@ define( 'CC_CSS_RELEASE_SERIAL_NUMBER', '20181120' );
  * Include telated files
 */
 require STYLESHEETPATH . '/inc/taxonomies.php';
+require STYLESHEETPATH . '/inc/helpers.php';
+require STYLESHEETPATH . '/inc/site.php';
+require STYLESHEETPATH . '/inc/render.php';
 require STYLESHEETPATH . '/inc/widgets.php';
 require STYLESHEETPATH . '/inc/blog_install.php';
+require STYLESHEETPATH . '/inc/settings.php';
+
+// CUSTOM POST TYPES
+require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chfeature-cpt-plugin/cc-chfeature-cpt-plugin.php';
+require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chvideos-cpt-plugin/cc-chvideos-cpt-plugin.php';
+require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chdocument-cpt-plugin/cc-chdocument-cpt-plugin.php';
+require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chevent-cpt-plugin/cc-chevent-cpt-plugin.php';
+require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chteam-cpt-plugin/cc-chteam-cpt-plugin.php';
+require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chwork-cpt-plugin/cc-chwork-cpt-plugin.php';
+require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-charea-cpt-plugin/cc-charea-cpt-plugin.php';
+
+// Define custom thumbnail sizes
+add_image_size('squared', 300, 300, true);
+add_image_size('landscape-small', 360, 200, true);
+
 
 function twentysixteen_entry_meta() {
 
@@ -35,64 +53,223 @@ function twentysixteen_entry_meta() {
 
 }
 
-
-function cc_chapter_setup() {
-	remove_theme_support( 'custom-logo' );
-}
-add_action( 'after_setup_theme', 'cc_chapter_setup', 9999 );
+/**
+ * Theme specific stuff
+ * --------------------
+ * */
 
 /**
- * Enqueue Scripts / Styles
- */
-function cc_chapter_enqueue_scripts() {
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'cc-google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Roboto+Condensed:400,700' );
-	wp_enqueue_style( 'cc-fontello', get_stylesheet_directory_uri() . '/fonts/fontello/css/cc-fontello.css' );
-	wp_enqueue_style( 'cc-style', get_stylesheet_directory_uri() . '/css/app.css', array( 'parent-style', 'cc-google-fonts', 'cc-fontello' ), CC_CSS_RELEASE_SERIAL_NUMBER );
-	//wp_enqueue_style( 'header-style', get_stylesheet_directory_uri() . '/css/header.css', array(), CC_CSS_RELEASE_SERIAL_NUMBER );
-	//wp_enqueue_style( 'nav-style', get_stylesheet_directory_uri() . '/css/navigation.css', array(), CC_CSS_RELEASE_SERIAL_NUMBER );
+ * Theme singleton class
+ * ---------------------
+ * Stores various theme and site specific info and groups custom methods
+ **/
+class site
+{
+	private static $instance;
 
-	wp_enqueue_script( 'cc-breakpoint-body-class', get_stylesheet_directory_uri() . '/js/breakpoint-body-class.js', array( 'jquery' ), CC_CSS_RELEASE_SERIAL_NUMBER, true );
-	wp_enqueue_script( 'cc-common', get_stylesheet_directory_uri() . '/js/cc.js', array( 'jquery' ), CC_CSS_RELEASE_SERIAL_NUMBER, true );
-	wp_enqueue_script( 'cc-sticky-nav', get_stylesheet_directory_uri() . '/js/sticky-nav.js', array( 'cc-common', 'jquery' ), CC_CSS_RELEASE_SERIAL_NUMBER, true );
-	wp_enqueue_script( 'cc-toggle-search', get_stylesheet_directory_uri() . '/js/toggle-search.js', array( 'jquery' ), CC_CSS_RELEASE_SERIAL_NUMBER, true );
-	wp_enqueue_script( 'cc-donation', get_stylesheet_directory_uri() . '/js/donation.js', array( 'jquery' ), CC_CSS_RELEASE_SERIAL_NUMBER, true );
+	protected $settings;
+
+	const id = __CLASS__;
+	const theme_ver = '20140624';
+	const theme_settings_permissions = 'edit_theme_options';
+	private function __construct()
+	{
+		$this->actions_manager();
+	}
+	public function __get($key)
+	{
+		return isset($this->$key) ? $this->$key : null;
+	}
+	public function __isset($key)
+	{
+		return isset($this->$key);
+	}
+	public static function get_instance()
+	{
+		if (!isset(self::$instance)) {
+			$c = __CLASS__;
+			self::$instance = new $c;
+		}
+		return self::$instance;
+	}
+	public function __clone()
+	{
+		trigger_error('Clone is not allowed.', E_USER_ERROR);
+	}
+	/**
+	 * Setup theme actions, both in the front and back end
+	 * */
+	public function actions_manager()
+	{
+		add_action('after_setup_theme', array($this, 'setup_theme'),15);
+		add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
+		add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
+		add_action('wp_head', array($this,'dequeue_styles'));
+		add_action('enqueue_scripts', array($this, 'enqueue_scripts'));
+		//add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
+		add_action('init', array($this, 'init_functions'));
+		add_action('init', array($this, 'register_menus_locations'));
+
+		add_action( 'enqueue_block_editor_assets', array($this, 'gutenberg_scripts' ));
+	}
+	public function init_functions()
+	{
+		add_post_type_support('page', 'excerpt');
+	}
+	/**
+	 * Script to tweak the gutenberg a little
+	*/
+	function gutenberg_scripts() {
+		wp_enqueue_script( 'cc-tweak-editor', get_stylesheet_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), filemtime( get_stylesheet_directory() . '/assets/js/editor.js' ), true );
+	}
+
+	/**
+	 * Enable theme's functionalities
+	 * @return void
+	 */
+	public function setup_theme()
+	{
+		// enable post formats
+		add_theme_support('post-formats', array('gallery', 'image', 'video', 'audio'));
+		add_theme_support('post-thumbnails');
+		add_theme_support('menus');
+		remove_theme_support( 'custom-logo' );
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => __( 'Red', 'cc-chapters' ),
+				'slug'  => 'cc-red',
+				'color'	=> '#f46b2c',
+			),
+			array(
+				'name'  => __( 'Green', 'cc-chapters' ),
+				'slug'  => 'cc-green',
+				'color' => '#27a635',
+			),
+			array(
+				'name'  => __( 'Orange', 'cc-chapters' ),
+				'slug'  => 'cc-orange',
+				'color' => '#ffae00',
+			),
+			array(
+				'name'	=> __( 'Yellow', 'cc-chapters' ),
+				'slug'	=> 'cc-yellow',
+				'color'	=> '#efbe01',
+			),
+			array(
+				'name'	=> __( 'Blue', 'cc-chapters' ),
+				'slug'	=> 'cc-blue',
+				'color'	=> '#35bbd8',
+			),
+		) );
+	}
+
+	public function register_menus_locations()
+	{
+		register_nav_menus(array(
+			'mobile'       => __('Mobile Menu'),
+			'secondary'    => __('Secondary Menu'),
+			'footer-links' => __('Footer Links'),
+			'social'       => __('Social Links Menu' ),
+		));
+	}
+	public function dequeue_styles() {
+		wp_dequeue_style('twentysixteen-fonts');
+		wp_deregister_style('twentysixteen-fonts');
+		wp_dequeue_style('genericons');
+		wp_deregister_style('genericons' );
+	}
+	public function enqueue_styles()
+	{
+		// Front-end styles
+		wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+		wp_enqueue_style('cc-google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Roboto+Condensed:400,700');
+		wp_enqueue_style('cc-fontello', get_stylesheet_directory_uri() . '/fonts/fontello/css/cc-fontello.css');
+		wp_enqueue_style('cc-style', get_stylesheet_directory_uri() . '/css/app.css', array('parent-style', 'cc-google-fonts', 'cc-fontello'), CC_CSS_RELEASE_SERIAL_NUMBER );
+		//wp_enqueue_style( 'dashicons' );
+	}
+
+	function admin_enqueue_scripts()
+	{
+		// admin scripts
+	}
+
+	function enqueue_scripts()
+	{
+		// front-end scripts
+		wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+		wp_enqueue_style('cc-google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Roboto+Condensed:400,700');
+		wp_enqueue_style('cc-fontello', get_stylesheet_directory_uri() . '/fonts/fontello/css/cc-fontello.css');
+		wp_enqueue_style('cc-style', get_stylesheet_directory_uri() . '/css/app.css', array('parent-style', 'cc-google-fonts', 'cc-fontello'), CC_CSS_RELEASE_SERIAL_NUMBER);
+
+		wp_enqueue_script('cc-breakpoint-body-class', get_stylesheet_directory_uri() . '/js/breakpoint-body-class.js', array('jquery'), CC_CSS_RELEASE_SERIAL_NUMBER, true);
+		wp_enqueue_script('cc-common', get_stylesheet_directory_uri() . '/js/cc.js', array('jquery'), CC_CSS_RELEASE_SERIAL_NUMBER, true);
+		wp_enqueue_script('cc-sticky-nav', get_stylesheet_directory_uri() . '/js/sticky-nav.js', array('cc-common', 'jquery'), CC_CSS_RELEASE_SERIAL_NUMBER, true);
+		wp_enqueue_script('cc-toggle-search', get_stylesheet_directory_uri() . '/js/toggle-search.js', array('jquery'), CC_CSS_RELEASE_SERIAL_NUMBER, true);
+		wp_enqueue_script('cc-donation', get_stylesheet_directory_uri() . '/js/donation.js', array('jquery'), CC_CSS_RELEASE_SERIAL_NUMBER, true );
+		//attach data to main script
+		$ajax_data = array(
+			'url' => admin_url('admin-ajax.php') //just in case  we need ajax
+		);
+		wp_localize_script('cc-common', 'Ajax', $ajax_data);
+	}
 }
-
-// wp_style_add_data( 	'cc-style', 'rtl', 'replace' );
-add_action( 'wp_enqueue_scripts', 'cc_chapter_enqueue_scripts' );
 
 /**
- * Dequeue Styles
- */
-function cc_chapter_dequeue_styles() {
-	wp_dequeue_style( 'twentysixteen-fonts' );
-	wp_deregister_style( 'twentysixteen-fonts' );
-	wp_dequeue_style( 'genericons' );
-	wp_deregister_style( 'genericons' );
-}
-add_action( 'wp_enqueue_scripts', 'cc_chapter_dequeue_styles', 9999 );
-add_action( 'wp_head', 'cc_chapter_dequeue_styles', 9999 );
+ * Instantiate the class object
+ * */
 
-/**
- * Register menus.
- */
-function cc_chapter_register_menu() {
-	register_nav_menus(
-		array(
-			'mobile'       => __( 'Mobile Menu' ),
-			'secondary'    => __( 'Secondary Menu' ),
-			'footer-links' => __( 'Footer Links' ),
-			'social'       => __( 'Social Links Menu' ),
-		)
-	);
-}
-add_action( 'init', 'cc_chapter_register_menu' );
-
+$_s = site::get_instance();
 
 /**
  * Register custom sidebars and widgetized areas.
  */
+
+$mandatory_sidebars = array(
+	'Homepage Feature' => array(
+		'name' => 'homepage-featured-widgets'
+	),
+	'Homepage space 1' => array(
+		'name' => 'homepage-space-1'
+	),
+	'Homepage space 2' => array(
+		'name' => 'homepage-space-2'
+	),
+	'Homepage space 3' => array(
+		'name' => 'homepage-space-3'
+	),
+	'Homepage space 4' => array(
+		'name' => 'homepage-space-4'
+	),
+	'Homepage space 5' => array(
+		'name' => 'homepage-space-5'
+	),
+	'Homepage Content' => array(
+		'name' => 'homepage-content-widgets'
+	),
+	'Content sidebar' => array(
+		'name' => 'content-sidebar',
+		'description' => 'Sidebar on each content type (pages, entries, videos, events)'
+	),
+	'Header - Right' => array(
+		'name' => 'header-widget'
+	),
+	'Footer - Center' => array(
+		'name' => 'footer-center'
+	),
+);
+//custom filter if we need to attach more sidebars or to modify the existent
+$mandatory_sidebars = apply_filters('intersecciones_base_mandatory_sidebars', $mandatory_sidebars);
+foreach ($mandatory_sidebars as $sidebar => $id_sidebar) {
+	register_sidebar(array(
+		'name'          => $sidebar,
+		'id'			=> $id_sidebar['name'],
+		'description' 	=> (!empty($id_sidebar['description'])) ? $id_sidebar['description']: '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">' . "\n",
+		'after_widget'  => '</section>',
+		'before_title'  => '<header class="widget-header"><h3 class="widget-title">',
+		'after_title'   => '</h3></header>'
+	));
+}
 
 
 function cc_chapter_widgets_init() {
@@ -103,52 +280,6 @@ function cc_chapter_widgets_init() {
 		'b' => 'homepage-content-widgets',
 		'c' => 'footer-center',
 	);
-
-			register_sidebar(
-				array(
-					'name'          => 'Homepage Content',
-					'id'            => 'homepage-content-widgets',
-					'before_widget' => '<div id="%1$s" class="%2$s">',
-					'after_widget'  => '</div>',
-					'before_title'  => '<h2>',
-					'after_title'   => '</h2>',
-				)
-			);
-		register_sidebar(
-			array(
-				'name'          => 'Header - Right',
-				'id'            => 'header-widget',
-				'before_widget' => '<div id="%1$s" class="%2$s">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h2>',
-				'after_title'   => '</h2>',
-			)
-		);
-			register_sidebar(
-				array(
-					'name'          => 'Footer - Center',
-					'id'            => 'footer-center',
-					'before_widget' => '<div id="%1$s" class="%2$s">',
-					'after_widget'  => '</div>',
-					'before_title'  => '<h2>',
-					'after_title'   => '</h2>',
-				)
-			);
-		/*
-	foreach ( $sidebars as $sidebar )
-	{
-		register_sidebar(
-			array (
-				'name'          => $sidebar,
-				'id'            => $sidebar,
-				'before_widget' => '<div id="%1$s" class="%2$s">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h2>',
-				'after_title'   => '</h2>',
-			)
-		);
-	}
-	*/
 
 	$active_widgets = get_option( 'sidebars_widgets' );
 

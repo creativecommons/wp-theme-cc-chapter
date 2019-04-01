@@ -292,51 +292,7 @@ text-align: center;
 
 /*	######	FEATURED PROGRAMS START		###### */
 
-.featured-programs { background:#efbe00}  
 
-.featured-programs .hero {
-    max-width: 1120px;
-    margin: 0 auto 20px;
-    clear: both;
-}
-.featured-programs .hero .item {
-    text-align: left;
-    clear: both;
-}
-.featured-programs .hero .thumbnail {
-    display: inline-block;
-    float: left;
-    margin-left: 32px;
-}
-.featured-programs .hero .thumbnail img {
-    width: 200px;
-    height: 200px;
-}
-.featured-programs .hero .teaser {
-    display: inline-block;
-    width: calc(100% - 280px);
-    margin-left: 40px;
-    clear: both;
-}
-.featured-programs article { margin-bottom: 70px }
-.featured-programs .item {
-	text-align:center;
-}
-.featured-programs .thumbnail img {
-	background:#fff;
-	border-radius:50%;
-    width: 100px;
-    height: auto;
-}
-
-.featured-programs .title {
-    font-size: 3rem;
-    line-height: 1.4444em;
-    margin: 24px 0 14px 0;
-}
-.featured-programs .title a,
-.featured-programs .title a:visited{ color:#e54314; }
-.featured-programs .title a:hover{ color:#fff; }
 
 
 /*	######	LINKS START		###### */

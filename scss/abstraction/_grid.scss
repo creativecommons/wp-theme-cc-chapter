@@ -1,0 +1,70 @@
+/*
+    GRID HELPERS
+    created by @hugosolar
+    https://codepen.io/hugosolar/pen/drqdWO
+*/
+
+@mixin grid-container($min-width: 160px, $gap: 1.5rem, $flow: dense, $columns: auto-fit) {
+    display: grid;
+    grid-template-columns: repeat($columns, minmax($min-width, 1fr));
+    grid-gap: $gap;
+    grid-auto-flow: $flow;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    @include breakpoint(tablet-sm-layout) {
+        grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    }
+}
+
+@mixin grid-rows($cols, $min-width: 200px) {
+    grid-template-rows: repeat($cols, $min-width);
+}
+
+@mixin use-columns($size) {
+    grid-column: span $size;
+}
+@mixin use-rows($size) {
+    grid-row: span $size;
+}
+.main-content-area {
+    width: 100vw;
+    margin: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    @include breakpoint(desktop-lg-layout) {
+        width: $container-max-width;
+        
+    }
+}
+.widget-area {
+    &.gray {
+        background-color: $grey-lighter;
+    }
+    &.blue {
+        background-color: $blue-brand;
+    }
+    &.yellow {
+        background-color: $yellow-medium;
+    }
+}
+.grid-container {
+    @include grid-container(15rem);
+    @for $x from 2 through 12 {
+          &.total-cols-#{$x} {
+            @include grid-container(15rem,1.5rem,dense,$x);
+      }
+    }
+    .cell {
+        @include grid-rows(6);
+        @for $i from 2 through 12 {
+            &.use-#{$i}-cols {
+                @include use-columns($i);
+            }
+        }
+        @for $i from 2 through 6 {
+            &.use-#{$i}-rows {
+                @include use-rows($i);
+            }
+        }
+    }
+}

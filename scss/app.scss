@@ -1,14 +1,16 @@
 // Import variables, abstractions, base styles and components.
 // Uncomment the next lines and adjust them to your needs.
 
-@import "_breakpoint.scss";
-
-@import "abstraction/_mixins.scss";
-@import "abstraction/_functions.scss";
-
 @import "variables/_colours.scss";
 @import "variables/_grid.scss";
 @import "variables/_typography.scss";
+
+@import "_breakpoint.scss";
+
+@import "abstraction/_mixins.scss";
+@import "abstraction/_grid.scss";
+@import "abstraction/_functions.scss";
+
 
 @import "base/_elements.scss";
 // @import "base/_fonts.scss";
