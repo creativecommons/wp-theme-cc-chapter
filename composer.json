@@ -29,8 +29,8 @@
     ],
     "require": {
         "composer/installers":"~1.0",
-        "wpackagist-theme/twentysixteen":"1.9",
-        "creativecommons/queulat":"2019.4.2"
+        "felipelavinz/queulat":"2019.4.2",
+        "wpackagist-theme/twentysixteen":"1.9"
     },
     "extra": {
         "installer-name":"cc-chapter",
