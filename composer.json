@@ -24,7 +24,8 @@
     "repositories": [
         {
             "type":"vcs",
-            "url":"https://github.com/creativecommons/queulat"
+            "url":"https://github.com/creativecommons/queulat",
+            "no-api":true
         }
     ],
     "require": {
