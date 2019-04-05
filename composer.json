@@ -21,6 +21,12 @@
             "email":"timid@creativecommons.org"
         }
     ],
+    "repositories": [
+        {
+            "type":"vcs",
+            "url":"https://github.com/creativecommons/queulat"
+        }
+    ],
     "require": {
         "composer/installers":"~1.0",
         "wpackagist-theme/twentysixteen":"1.9",
