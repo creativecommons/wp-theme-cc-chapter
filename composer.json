@@ -23,10 +23,14 @@
     ],
     "require": {
         "composer/installers":"~1.0",
-        "wpackagist-theme/twentysixteen":"1.9"
+        "wpackagist-theme/twentysixteen":"1.9",
+        "creativecommons/queulat": "2019.4.2"
     },
     "extra": {
         "installer-name":"cc-chapter",
+        "installer-paths": {
+            "../../mu-plugins/{$name}": [ "creativecommons/queulat" ]
+        }
     },
     "scripts": {
         "compat":"phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",
