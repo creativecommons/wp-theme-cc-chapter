@@ -59,7 +59,7 @@ class Cc_Chevent_Post_Type extends Post_Type {
 			],
 			'map_meta_cap'          => true,
 			'register_meta_box_cb'  => null,
-			'taxonomies'            => [],
+			'taxonomies'            => [ 'post_tag' ],
 			'has_archive'           => true,
 			'query_var'             => 'cc_chevent',
 			'can_export'            => true,

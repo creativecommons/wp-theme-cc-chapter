@@ -564,25 +564,7 @@ blockquote {
                 height: 100%;
                 z-index: 10;
                 .entry-date {
-                    display: flex;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    text-align: center;
-                    color: $white;
-                    background: rgba($black, .4);
-                    .weekday {
-                        text-transform: uppercase;
-                    }
-                    .day {
-                        font-size: 5rem;
-                        line-height: 5rem;
-                        font-family: $ff-roboto-condensed;
-                        font-weight: 700;
-                    }
-                    .month {
-                        text-transform: uppercase;
-                    }
+                   @include date-format($white, rgba($black, .4));
                 }
                 &.no-thumb {
                     position: relative;

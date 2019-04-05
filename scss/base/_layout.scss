@@ -192,7 +192,36 @@ body.admin-bar .site-header.sticky {
         margin: 0;
     }
 }
-
+.entry-header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .entry-title {
+        font-size: $fz-h1;
+    }
+}
+.entry-main-content {
+    .entry-date-container {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-top: 10px solid $grey-medium;
+        border-bottom: 1px solid $grey-medium;
+        .entry-date {
+            @include date-format($grey-darker, transparent);
+        }
+    }
+}
+.entry-meta {
+    margin-top: 1.5rem;
+    .item-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        strong {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+    }
+}
 .site-branding {
     margin: 0;
     overflow: hidden;

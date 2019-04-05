@@ -32,41 +32,47 @@ $desktop-xl-layout: 100em;      // 1600px
 */
 /* ---- end _breakpoint-new.scss ---- */
 /**
- * Create a pseudo element (::before or ::after) that will act as an horizontal divider
- *
- * @param string $icon: value for 'content' proprety
- * @param string $location: 'before' for '::before'(default) or 'after' for '::after'
- */
+    * Create a pseudo element (::before or ::after) that will act as an horizontal divider
+    *
+    * @param string $icon: value for 'content' proprety
+    * @param string $location: 'before' for '::before'(default) or 'after' for '::after'
+    */
 /* Clearfix Mixin */
 /* End of: clearfix */
 /* Vertical aligment from:
-   http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
-*/
+    http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+    */
 /* End of: Vertical aligment */
 /* -- To be applied in a "more link" section -- */
 /**
- * Style an element as a button
- *
- * @param string $style: 'default', 'primary', 'secondary', 'tertiary', donate'
- * @param boolean $add-basic-style: Flag used to avoid css code duplication, default to true;
- * @param boolean $add-parent-style: Flag used to avoid css code duplication, default to true;
- * @param string $style: 'small', 'large'
- * @param boolean $arrow-style: default to false
- * @param string $border-radius: value for css property 'border-radius'
- */
+    * Style an element as a button
+    *
+    * @param string $style: 'default', 'primary', 'secondary', 'tertiary', donate'
+    * @param boolean $add-basic-style: Flag used to avoid css code duplication, default to true;
+    * @param boolean $add-parent-style: Flag used to avoid css code duplication, default to true;
+    * @param string $style: 'small', 'large'
+    * @param boolean $arrow-style: default to false
+    * @param string $border-radius: value for css property 'border-radius'
+    */
 /**
- * Provide a pointy arrow style for an input element that renders as a button.
- * Note that this is quite limited and it is a much better idea to use the
- * button mixin with either an <a> or a <button> element.
- */
+    * Provide a pointy arrow style for an input element that renders as a button.
+    * Note that this is quite limited and it is a much better idea to use the
+    * button mixin with either an <a> or a <button> element.
+    */
 /**
- * Stagger a transition-delay within a large grid of elements.
- */
+    * Stagger a transition-delay within a large grid of elements.
+    */
 /*
     GRID HELPERS
     created by @hugosolar
     https://codepen.io/hugosolar/pen/drqdWO
 */
+.grid-sidebar.right {
+  padding-left: 1.5rem; }
+
+.grid-sidebar.left {
+  padding-right: 1.5rem; }
+
 .main-content-area {
   width: 100vw;
   margin: auto;
@@ -292,6 +298,111 @@ $desktop-xl-layout: 100em;      // 1600px
     .grid-container .cell.use-6-rows {
       -ms-grid-row: span 6;
           grid-row: span 6; }
+
+.grid-columns {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: .5rem;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; }
+  .grid-columns.align-center {
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .grid-columns.align-right {
+    -webkit-justify-content: right;
+        -ms-flex-pack: right;
+            justify-content: right; }
+  .grid-columns.align-stretch {
+    -webkit-justify-content: right;
+        -ms-flex-pack: right;
+            justify-content: right; }
+  .grid-columns .use-1-columns {
+    -ms-grid-column: span 1;
+        grid-column: span 1; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-1-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-2-columns {
+    -ms-grid-column: span 2;
+        grid-column: span 2; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-2-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-3-columns {
+    -ms-grid-column: span 3;
+        grid-column: span 3; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-3-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-4-columns {
+    -ms-grid-column: span 4;
+        grid-column: span 4; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-4-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-5-columns {
+    -ms-grid-column: span 5;
+        grid-column: span 5; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-5-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-6-columns {
+    -ms-grid-column: span 6;
+        grid-column: span 6; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-6-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-7-columns {
+    -ms-grid-column: span 7;
+        grid-column: span 7; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-7-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-8-columns {
+    -ms-grid-column: span 8;
+        grid-column: span 8; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-8-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-9-columns {
+    -ms-grid-column: span 9;
+        grid-column: span 9; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-9-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-10-columns {
+    -ms-grid-column: span 10;
+        grid-column: span 10; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-10-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-11-columns {
+    -ms-grid-column: span 11;
+        grid-column: span 11; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-11-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
+  .grid-columns .use-12-columns {
+    -ms-grid-column: span 12;
+        grid-column: span 12; }
+    @media (max-width: 44.375em) {
+      .grid-columns .use-12-columns {
+        -ms-grid-column: span 12;
+            grid-column: span 12; } }
 
 /**
  * Remove the unit of a length
@@ -1515,6 +1626,57 @@ body.admin-bar .site-header.sticky {
               -ms-grid-row-align: center;
           align-self: center;
   margin: 0; }
+
+.entry-header {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  .entry-header .entry-title {
+    font-size: 56px; }
+
+.entry-main-content .entry-date-container {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 10px solid #464646;
+  border-bottom: 1px solid #464646; }
+  .entry-main-content .entry-date-container .entry-date {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    color: #2B2B2B;
+    background: transparent; }
+    .entry-main-content .entry-date-container .entry-date .weekday {
+      text-transform: uppercase; }
+    .entry-main-content .entry-date-container .entry-date .day {
+      font-size: 5rem;
+      line-height: 5rem;
+      font-family: "Roboto Condensed", sans-serif;
+      font-weight: 700; }
+    .entry-main-content .entry-date-container .entry-date .month {
+      text-transform: uppercase; }
+
+.entry-meta {
+  margin-top: 1.5rem; }
+  .entry-meta .item-meta {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .entry-meta .item-meta strong {
+      text-transform: uppercase;
+      font-size: 1.2rem; }
 
 .site-branding {
   margin: 0;
