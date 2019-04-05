@@ -26,7 +26,7 @@
         "wpackagist-theme/twentysixteen":"1.9"
     },
     "extra": {
-        "installer-name":"cc-chapter",
+        "installer-name":"cc-chapter"
     },
     "scripts": {
         "compat":"phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",
