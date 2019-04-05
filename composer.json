@@ -24,12 +24,12 @@
     "require": {
         "composer/installers":"~1.0",
         "wpackagist-theme/twentysixteen":"1.9",
-        "creativecommons/queulat": "2019.4.2"
+        "creativecommons/queulat":"2019.4.2"
     },
     "extra": {
         "installer-name":"cc-chapter",
         "installer-paths": {
-            "../../mu-plugins/{$name}": [ "creativecommons/queulat" ]
+            "wp-content/mu-plugins/{$name}":"creativecommons/queulat"
         }
     },
     "scripts": {
