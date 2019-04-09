@@ -21,16 +21,20 @@
             "email":"timid@creativecommons.org"
         }
     ],
+    "repositories": [
+        {
+            "type":"vcs",
+            "url":"https://github.com/creativecommons/queulat",
+            "no-api":true
+        }
+    ],
     "require": {
         "composer/installers":"~1.0",
-        "wpackagist-theme/twentysixteen":"1.9",
-        "creativecommons/queulat": "2019.4.2"
+        "felipelavinz/queulat":"2019.4.2",
+        "wpackagist-theme/twentysixteen":"1.9"
     },
     "extra": {
-        "installer-name":"cc-chapter",
-        "installer-paths": {
-            "../../mu-plugins/{$name}": [ "creativecommons/queulat" ]
-        }
+        "installer-name":"cc-chapter"
     },
     "scripts": {
         "compat":"phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",
