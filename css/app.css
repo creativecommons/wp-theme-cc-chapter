@@ -6702,6 +6702,7 @@ button.donate.arrow:hover::after,
 
 #header-widget {
   text-align: right;
+  padding: 0;
   margin-bottom: 11px;
   right: 40px;
   position: relative;

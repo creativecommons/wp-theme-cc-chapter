@@ -44,7 +44,7 @@
                                 </span>
                             </div>
                             <div class="header-right-col">
-                                <?php get_template_part( 'template-part/sidebar/sidebar','header-widget' ); ?>
+                                <?php get_template_part( 'template-parts/sidebar/sidebar','header-widget' ); ?>
                                 <?php if ( has_nav_menu( 'secondary' ) ) : ?>
                                 <nav	 id="secondary-navigation" class="secondary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Secondary Menu' ); ?>">
                                     <?php

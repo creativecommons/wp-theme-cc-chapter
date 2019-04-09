@@ -271,74 +271,9 @@ foreach ($mandatory_sidebars as $sidebar => $id_sidebar) {
 	));
 }
 
-
-function cc_chapter_widgets_init() {
-
-	// Register three sidebars.
-	$sidebars = array(
-		'a' => 'header-widget',
-		'b' => 'homepage-content-widgets',
-		'c' => 'footer-center',
-	);
-
-	$active_widgets = get_option( 'sidebars_widgets' );
-
-	if ( empty( $active_widgets[ $sidebars['a'] ] ) ) {
-		$counter                                 = 1;
-		$active_widgets[ $sidebars['a'] ][0]     = 'creativecommons_header_links-' . $counter;
-		$header_links_widget_content[ $counter ] = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_header_links', $header_links_widget_content );
-	}
-
-	if ( empty( $active_widgets[ $sidebars['b'] ] ) ) {
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][] = 'creativecommons_links-' . $counter;
-		$links_widget_content[ $counter ]   = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_links', $links_widget_content );
-
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][]  = 'creativecommons_programs-' . $counter;
-		$programs_widget_content[ $counter ] = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_programs', $programs_widget_content );
-
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][] = 'creativecommons_news-' . $counter;
-		$news_widget_content[ $counter ]    = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_news', $news_widget_content );
-
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][] = 'creativecommons_works-' . $counter;
-		$works_widget_content[ $counter ]   = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_works', $works_widget_content );
-
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][] = 'creativecommons_videos-' . $counter;
-		$videos_widget_content[ $counter ]  = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_videos', $videos_widget_content );
-	}
-
-	if ( empty( $active_widgets[ $sidebars['c'] ] ) ) {
-
-		$counter++;
-		$active_widgets[ $sidebars['c'] ][]      = 'creativecommons_footer_links-' . $counter;
-		$footer_links_widget_content[ $counter ] = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_footer_links', $footer_links_widget_content );
-	}
-		update_option( 'sidebars_widgets', $active_widgets );
-
-}
-
-
-
 // ##############################################################################
 // ##############################################################################
-function cc_chapter_remove_parent_sidebars() {
-	unregister_sidebar( 'sidebar-2' );
-	unregister_sidebar( 'sidebar-3' );
-}
 
-add_action( 'widgets_init', 'cc_chapter_widgets_init', 10 );
-add_action( 'widgets_init', 'cc_chapter_remove_parent_sidebars', 11 );
 
 // stop wp removing span tags
 function cc_chapter_tinymce_fix( $init ) {
