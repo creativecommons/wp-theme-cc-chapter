@@ -4,7 +4,7 @@ class WP_Widget_text_banner_simple extends WP_Widget {
     function __construct() {
         $widget_ops = array('classname' => 'text-banner', 'description' => 'Shows a simple text banner with link');
         $control_ops = array();
-        parent::__construct('text-banner', 'Text banner', $widget_ops, $control_ops);
+        parent::__construct('text-banner', 'CC Text banner', $widget_ops, $control_ops);
     }
 
     function widget($args, $instance) {

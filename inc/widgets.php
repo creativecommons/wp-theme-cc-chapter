@@ -2,11 +2,11 @@
 /**
  * THEME WIDGETS
  */
-require STYLESHEETPATH . '/inc/widgets/cc-links.php';
-require STYLESHEETPATH . '/inc/widgets/cc-programs.php';
-require STYLESHEETPATH . '/inc/widgets/cc-works.php';
-require STYLESHEETPATH . '/inc/widgets/cc-videos.php';
-require STYLESHEETPATH . '/inc/widgets/cc-news.php';
+// require STYLESHEETPATH . '/inc/widgets/cc-links.php';
+// require STYLESHEETPATH . '/inc/widgets/cc-programs.php';
+// require STYLESHEETPATH . '/inc/widgets/cc-works.php';
+// require STYLESHEETPATH . '/inc/widgets/cc-videos.php';
+// require STYLESHEETPATH . '/inc/widgets/cc-news.php';
 require STYLESHEETPATH . '/inc/widgets/cc-header-links.php';
 require STYLESHEETPATH . '/inc/widgets/cc-footer-links.php';
 require STYLESHEETPATH . '/inc/widgets/cc-text-banner.php';
