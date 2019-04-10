@@ -1668,6 +1668,7 @@ body.admin-bar .site-header.sticky {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    margin: .8rem 0;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -1677,6 +1678,10 @@ body.admin-bar .site-header.sticky {
     .entry-meta .item-meta strong {
       text-transform: uppercase;
       font-size: 1.2rem; }
+    .entry-meta .item-meta.align-center {
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
 
 .site-branding {
   margin: 0;

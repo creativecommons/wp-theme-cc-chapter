@@ -20,9 +20,9 @@ require STYLESHEETPATH . '/inc/settings.php';
 // CUSTOM POST TYPES
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chfeature-cpt-plugin/cc-chfeature-cpt-plugin.php';
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chvideos-cpt-plugin/cc-chvideos-cpt-plugin.php';
-require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chdocument-cpt-plugin/cc-chdocument-cpt-plugin.php';
+//require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chdocument-cpt-plugin/cc-chdocument-cpt-plugin.php';
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chevent-cpt-plugin/cc-chevent-cpt-plugin.php';
-require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chteam-cpt-plugin/cc-chteam-cpt-plugin.php';
+//require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chteam-cpt-plugin/cc-chteam-cpt-plugin.php';
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chwork-cpt-plugin/cc-chwork-cpt-plugin.php';
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-charea-cpt-plugin/cc-charea-cpt-plugin.php';
 

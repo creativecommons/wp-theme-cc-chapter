@@ -50,13 +50,13 @@
                         </div>
                     <?php endif; ?>
                     <?php if (!empty($post->event_signups)): ?>
-                        <div class="item-meta">
-                            <a href="<?php echo $post->event_signups ?>" class="button">Sign up event</a>
+                        <div class="item-meta align-center">
+                            <a href="<?php echo $post->event_signups ?>" class="button secondary">Sign up event</a>
                         </div>
                     <?php endif; ?>
                     <?php if (!empty($post->event_url)): ?>
-                        <div class="item-meta">
-                            <a href="<?php echo $post->event_url ?>" class="button">More info</a>
+                        <div class="item-meta align-center">
+                            <a href="<?php echo $post->event_url ?>" class="button secondary">More info</a>
                         </div>
                     <?php endif; ?>
                     </div>
