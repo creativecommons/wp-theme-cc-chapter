@@ -5374,6 +5374,11 @@ blockquote.cc-short-block {
       letter-spacing: .3rem;
       font-weight: 700;
       line-height: 4.5rem; }
+    @media (max-width: 44.375em) {
+      .widget.title .grid-container {
+        display: block !important; }
+        .widget.title .grid-container .widget-title {
+          margin-bottom: 1rem; } }
   .widget.news {
     padding: 0; }
     .widget.news .widget-title {
