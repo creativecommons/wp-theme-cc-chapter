@@ -1252,7 +1252,7 @@ video.wp-video-shortcode {
 .country_id .c_nf{ background-image:url(icons/flags/NF.png);}
 .country_id .c_ng{ background-image:url(icons/flags/NG.png);}
 .country_id .c_ni{ background-image:url(icons/flags/NI.png);}
-.country_id .c_nl{ background-image:url(icons/flags/NL.png);}
+.country_id .c_nl{ background-image:url(icons/flags/nl.png);}
 .country_id .c_no{ background-image:url(icons/flags/NO.png);}
 .country_id .c_np{ background-image:url(icons/flags/NP.png);}
 .country_id .c_nr{ background-image:url(icons/flags/NR.png);}
@@ -1763,12 +1763,12 @@ video.wp-video-shortcode {
         /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
         height: auto;
         position: relative;
-        top: 0.5em;
-        left: 0.08em; 
+        top: 0.4em;
+        left: 0; 
 }
       .social-navigation a[href^="mailto:"]:before {
         content: "\e801";
-        left: 0.1em;
+        left: 0;
         top: 0.35em; 
 }
       .social-navigation a[href*="facebook.com"]:before {

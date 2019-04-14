@@ -174,7 +174,7 @@ body.admin-bar .site-header.sticky {
 .site-header {
     .site-header-menu {
         transition: margin 0.4s ease;
-        align-self: flex-end;
+        align-self: flex-start;
         margin: 0 0 20px 0;
         
         @include breakpoint (desktop-sm-layout) {
@@ -183,7 +183,7 @@ body.admin-bar .site-header.sticky {
         }
         
         @include breakpoint (desktop-md-layout) {
-            width: 60%;
+            width: 100%;
         }
     }
     
@@ -197,6 +197,16 @@ body.admin-bar .site-header.sticky {
     padding-bottom: 2rem;
     .entry-title {
         font-size: $fz-h1;
+    }
+}
+.single {
+    .wrapper-main {
+        .post {
+            .entry-content {
+                float: none;
+                width: 100%;
+            }
+        }
     }
 }
 .entry-main-content {
