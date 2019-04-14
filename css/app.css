@@ -2454,6 +2454,10 @@ body::before, body::after {
   display: none !important;
   height: 0 !important; }
 
+@media (max-width: 44.375em) {
+  body {
+    overflow-x: hidden; } }
+
 .site {
   margin: 0; }
 
@@ -2462,7 +2466,6 @@ body::before, body::after {
 
 .site-header {
   /*  background-color: $blue-brand; */
-  box-shadow: 0px 0 4px 0 rgba(0, 0, 0, 0.8);
   /*height: 70px; */
   padding: 0;
   width: 100%;
@@ -2511,6 +2514,9 @@ body::before, body::after {
       margin-bottom: 2px; }
     .site-header.sticky.detached .menu-toggle {
       top: -3px; }
+  @media (min-width: 61.5625em) {
+    .site-header {
+      box-shadow: 0px 0 4px 0 rgba(0, 0, 0, 0.8); } }
   @media (min-width: 56.875em) {
     .site-header {
       background-image: none;
@@ -3085,6 +3091,16 @@ body.admin-bar .site-header.sticky {
   color: #fff; }
   .wp-block-button .wp-block-button__link.has-cc-yellow-background-color:hover {
     background-color: #ffd019; }
+
+@media (max-width: 48.9375em) {
+  .wp-block-gallery {
+    display: block; }
+    .wp-block-gallery .blocks-gallery-item {
+      width: 100%; } }
+
+@media (max-width: 48.9375em) {
+  .wp-block-media-text {
+    display: block; } }
 
 /* ### --- END _layout.scss ==================================================================== */
 /* ### --- _utils.scss ==================================================================== */
@@ -9070,11 +9086,8 @@ button.donate.arrow:hover::after,
 /*	### < 640px  ### ???	*/
 /*	### < 783px  ###	*/
 /*	### > 985px  ###	*/
-.admin-bar .site-header.sticky.detached.offscreen {
-  top: 30px; }
-
 .admin-bar.layout-mobile .site-header.sticky.detached.offscreen {
-  top: 45px; }
+  margin-top: 0; }
 
 @media (max-width: 44.375em) {
   /* 44.375em; // 710px 

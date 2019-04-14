@@ -2011,8 +2011,8 @@ video.wp-video-shortcode {
 
 }
 
-.admin-bar .site-header.sticky.detached.offscreen { top: 30px; }
-.admin-bar.layout-mobile .site-header.sticky.detached.offscreen { top: 45px; }
+// .admin-bar .site-header.sticky.detached.offscreen { top: 30px; }
+.admin-bar.layout-mobile .site-header.sticky.detached.offscreen { margin-top: 0; }
 
 
 @include breakpoint (tablet-sm-layout) { 
