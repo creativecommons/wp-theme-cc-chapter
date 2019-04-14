@@ -52,6 +52,12 @@
         grid-column: span 12;
     }
 }
+@mixin grid-use-columns-offset($offset,$size) {
+    grid-column: $offset/span $size;
+    @include breakpoint(tablet-sm-layout) {
+        grid-column: span 12;
+    }
+}
 @mixin use-rows($size) {
     grid-row: span $size;
 }
@@ -102,7 +108,11 @@
     @for $i from 1 through 12 {
         .use-#{$i}-columns {
             @include grid-use-columns($i);
-
+            @for $x from 2 through 11 {
+                &.offset-#{$x} {
+                    @include grid-use-columns-offset($x,$i);
+                }
+            }
         }
     }
 }

@@ -16,8 +16,11 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentysixteen' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+                <?php get_search_form(); ?>
 			</header><!-- .page-header -->
 
+            <div class="grid-columns">
+                <div class="use-8-columns offset-3">
 			<?php
 			// Start the loop.
 			while ( have_posts() ) :
@@ -48,7 +51,8 @@ get_header(); ?>
 
 		endif;
 		?>
-
+                </div>
+            </div>
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->
 
