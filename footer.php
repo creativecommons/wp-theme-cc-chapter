@@ -56,7 +56,7 @@
         <div xmlns:cc="https://creativecommons.org/ns#" about="https://creativecommons.org">
         <p>Except where otherwise <a class="subfoot" href="/policies#license">noted</a>, content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>. <a class="subfoot" href="/website-icons" target="blank">Icons</a> by The Noun Project.</p>
         <?php if ( is_front_page() ) { ?>
-        <p class="website-credit">Website by <a class="subfoot" href="http://affinitybridge.com/" target="blank"> Affinity Bridge</a>.</p>
+        <p class="website-credit">Website by <a class="subfoot" href="https://creativecommons.org/" target="blank"> Creative Commons</a>.</p>
         <?php } ?>
 
         </div>

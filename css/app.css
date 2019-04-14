@@ -2514,6 +2514,10 @@ body::before, body::after {
       margin-bottom: 2px; }
     .site-header.sticky.detached .menu-toggle {
       top: -3px; }
+  @media (max-width: 44.375em) {
+    .site-header {
+      height: 50px;
+      margin-top: 0; } }
   @media (min-width: 61.5625em) {
     .site-header {
       box-shadow: 0px 0 4px 0 rgba(0, 0, 0, 0.8); } }
@@ -2785,6 +2789,7 @@ body.admin-bar .site-header.sticky {
   /* Remove extra margins at edges for different configurations */ }
   @media (max-width: 44.375em) {
     .cc-footer {
+      display: block;
       padding: 35px 0 25px 0;
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
@@ -2794,7 +2799,13 @@ body.admin-bar .site-header.sticky {
               flex-wrap: nowrap;
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
-              justify-content: space-between; } }
+              justify-content: space-between; }
+      .cc-footer .column {
+        display: block;
+        width: 100% !important;
+        text-align: center; }
+        .cc-footer .column.cc-footer-license .license-icons {
+          text-align: center !important; } }
   .cc-footer .column {
     margin: 5px 0; }
     @media (max-width: 44.375em) {
@@ -7390,8 +7401,7 @@ video.wp-video-shortcode {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
   .featured-programs article {
-    margin-bottom: 30px;
-    width: 50%; }
+    margin-bottom: 30px; }
   .featured-programs .item {
     text-align: center;
     width: 95%;
