@@ -2642,9 +2642,9 @@ body.admin-bar .site-header.sticky {
     font-size: 48px;
     line-height: 1.1em; }
 
-.single .wrapper-main .post .entry-content {
-  float: none;
-  width: 100%; }
+.single .wrapper-main .post .entry-content, .page .wrapper-main .post .entry-content {
+  float: none !important;
+  width: 100% !important; }
 
 .entry-main-content .entry-date-container {
   padding-top: 1.5rem;
