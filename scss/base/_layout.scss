@@ -148,6 +148,19 @@ body.admin-bar .site-header.sticky {
         }
     }
 }
+.archive-list {
+    .post {
+        .teaser-post-image {
+            text-align: center;
+        }
+        .entry-content {
+            margin-top: 2rem;
+            width: 100% !important;
+            float: none !important;
+            text-align: center;
+        }
+    }
+}
 .site-header-main {
     /*
     @include content-constrained();

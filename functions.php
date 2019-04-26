@@ -10,6 +10,7 @@ define( 'CC_CSS_RELEASE_SERIAL_NUMBER', '20181120' );
  * Include telated files
 */
 require STYLESHEETPATH . '/inc/taxonomies.php';
+require STYLESHEETPATH . '/inc/search_filter.php';
 require STYLESHEETPATH . '/inc/helpers.php';
 require STYLESHEETPATH . '/inc/site.php';
 require STYLESHEETPATH . '/inc/render.php';

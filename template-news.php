@@ -14,15 +14,12 @@
  * @package WordPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
+ * template name: News archive (post entries)
  */
 
 get_header(); 
 	$search = new search_filter();
-		if (get_class(get_queried_object()) == 'WP_Post_Type') {
-			$search->set_post_type(get_queried_object()->name);
-		} else if (get_class(get_queried_object()) != 'WP_Term_Object') {
-			$search->set_post_type('any');
-		}
+		$search->set_post_type('post');
 		if ( get_query_var('paged') ) {
 			$search->set_page(get_query_var('paged'));
 		}
@@ -81,14 +78,12 @@ get_header();
 				</div>
 			</form>
 		</div>
-	  <main id="main" class="site-main" role="main">
+	  <main id="main" class="site-main archive-list" role="main">
 			<?php if ( $query->have_posts() ) { ?>
 
 				<header class="page-header">
-					<?php
-						single_term_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
-					?>
+                    <h1 class="page-title"><?php the_title(); ?></h1>
+                    <div class="taxonomy-description"><?php the_content() ?></div>
 				</header><!-- .page-header -->
 
 				<?php get_template_part( 'template-parts/sidebar/sidebar','content-above-mobile' ); ?>
@@ -111,13 +106,24 @@ get_header();
 				</div>
 				<?php
 				// Previous/next page navigation.
-				the_posts_pagination(
-					array(
-						'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-						'next_text'          => __( 'Next page', 'twentysixteen' ),
-						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-					)
-				);
+				 $total_pages = $query->max_num_pages;
+
+                if ($total_pages > 1){
+
+                    $current_page = max(1, get_query_var('paged'));
+                    echo '<div class="navigation pagination" role="navigation">';
+                        echo '<div class="nav-links">';
+                            echo paginate_links(array(
+                                'base' => get_pagenum_link(1) . '%_%',
+                                'format' => '/page/%#%',
+                                'current' => $current_page,
+                                'total' => $total_pages,
+                                'prev_text'    => __('« prev'),
+                                'next_text'    => __('next »'),
+                            ));
+                        echo '</div>';
+                    echo '</div>';
+                }    
 
 				// If no content, include the "No posts found" template.
 			} else {

@@ -102,8 +102,7 @@ $desktop-xl-layout: 100em;      // 1600px
   margin-bottom: 1.5rem; }
   @media (max-width: 44.375em) {
     .grid-container {
-      -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-          grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+      display: block; } }
   .grid-container.total-cols-2 {
     display: -ms-grid;
     display: grid;
@@ -115,8 +114,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-2 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-3 {
     display: -ms-grid;
     display: grid;
@@ -128,8 +126,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-3 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-4 {
     display: -ms-grid;
     display: grid;
@@ -141,8 +138,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-4 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-5 {
     display: -ms-grid;
     display: grid;
@@ -154,8 +150,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-5 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-6 {
     display: -ms-grid;
     display: grid;
@@ -167,8 +162,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-6 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-7 {
     display: -ms-grid;
     display: grid;
@@ -180,8 +174,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-7 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-8 {
     display: -ms-grid;
     display: grid;
@@ -193,8 +186,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-8 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-9 {
     display: -ms-grid;
     display: grid;
@@ -206,8 +198,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-9 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-10 {
     display: -ms-grid;
     display: grid;
@@ -219,8 +210,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-10 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-11 {
     display: -ms-grid;
     display: grid;
@@ -232,8 +222,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-11 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container.total-cols-12 {
     display: -ms-grid;
     display: grid;
@@ -245,8 +234,7 @@ $desktop-xl-layout: 100em;      // 1600px
     margin-bottom: 1.5rem; }
     @media (max-width: 44.375em) {
       .grid-container.total-cols-12 {
-        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+        display: block; } }
   .grid-container .cell {
     -ms-grid-rows: (200px)[6];
         grid-template-rows: repeat(6, 200px); }
@@ -2339,6 +2327,29 @@ blockquote {
       width: 40%; } }
 
 /* ### --- END _elements.scss ==================================================================== */
+.filter-form {
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #E9E9E9; }
+  .filter-form .filter-row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .filter-form .filter-row .item {
+      margin-right: 1rem;
+      -webkit-align-self: center;
+          -ms-flex-item-align: center;
+                  -ms-grid-row-align: center;
+              align-self: center; }
+      .filter-form .filter-row .item.search-description h5 {
+        text-transform: uppercase;
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 500; }
+      .filter-form .filter-row .item select, .filter-form .filter-row .item input {
+        margin-bottom: 0; }
+      .filter-form .filter-row .item:last-child {
+        margin-right: 0; }
+
 .featured-programs .hero {
   max-width: 1120px;
   margin: 0 auto 20px;
@@ -2558,6 +2569,15 @@ body.admin-bar .site-header.sticky {
       .site-menu-wrapper .main-navigation .menu-item.menu-item-has-children .sub-menu .menu-item a {
         color: #000;
         font-size: 1.8rem; }
+
+.archive-list .post .teaser-post-image {
+  text-align: center; }
+
+.archive-list .post .entry-content {
+  margin-top: 2rem;
+  width: 100% !important;
+  float: none !important;
+  text-align: center; }
 
 .site-header-main {
   /*
