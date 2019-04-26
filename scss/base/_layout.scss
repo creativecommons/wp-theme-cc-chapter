@@ -127,7 +127,27 @@ body.admin-bar .site-header.sticky {
         margin-top: 32px;
     }
 }
-
+.site-menu-wrapper {
+    .main-navigation {
+        margin: 0 -20px;
+        .menu-item {
+            &.menu-item-has-children {
+                .sub-menu {
+                    background-color: $white;
+                    list-style-type: none;
+                    .menu-item {
+                        margin-bottom: 0;
+                        list-style: none;
+                        a {
+                            color: $black;
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 .site-header-main {
     /*
     @include content-constrained();
@@ -135,9 +155,7 @@ body.admin-bar .site-header.sticky {
     justify-content: space-between;
     position: relative;
     */
-    .main-navigation {
-        margin: 0 -20px;
-    }
+    
     
     @include breakpoint (max-width $desktop-sm-layout - 0.001em) {
         display: block;

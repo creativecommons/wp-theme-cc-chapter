@@ -2547,6 +2547,18 @@ body.admin-bar .site-header.sticky {
     body.admin-bar .site-header.sticky {
       margin-top: 32px; } }
 
+.site-menu-wrapper .main-navigation {
+  margin: 0 -20px; }
+  .site-menu-wrapper .main-navigation .menu-item.menu-item-has-children .sub-menu {
+    background-color: #fff;
+    list-style-type: none; }
+    .site-menu-wrapper .main-navigation .menu-item.menu-item-has-children .sub-menu .menu-item {
+      margin-bottom: 0;
+      list-style: none; }
+      .site-menu-wrapper .main-navigation .menu-item.menu-item-has-children .sub-menu .menu-item a {
+        color: #000;
+        font-size: 1.8rem; }
+
 .site-header-main {
   /*
     @include content-constrained();
@@ -2554,8 +2566,6 @@ body.admin-bar .site-header.sticky {
     justify-content: space-between;
     position: relative;
     */ }
-  .site-header-main .main-navigation {
-    margin: 0 -20px; }
   @media (min-width: 56.875em) {
     .site-header-main {
       background-image: linear-gradient(90deg, #1eb6d9, #1eb6d9, #1eb6d9);
