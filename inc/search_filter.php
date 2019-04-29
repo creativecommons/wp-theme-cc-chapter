@@ -165,7 +165,7 @@ class search_filter {
 	}
 	function get_years($from='2010') {
 		$years = array();
-		for ( $x = $from; $x <= date(Y); $x++) {
+		for ( $x = $from; $x <= date('Y'); $x++) {
 			$years[] = $x;
 		}
 		return $years;

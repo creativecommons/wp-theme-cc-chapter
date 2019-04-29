@@ -18,6 +18,9 @@
 
 	get_header();
 	$search = new search_filter();
+    $the_search = isset($_GET['search']) ? esc_attr($_GET['search']) : '';
+    $the_month = isset($_GET['date_month']) ? esc_attr($_GET['date_month']) : '';
+    $the_year = isset($_GET['date_year']) ? esc_attr($_GET['date_year']) : '';
 		if (get_class(get_queried_object()) == 'WP_Post_Type') {
 			$search->set_post_type(get_queried_object()->name);
 		} else if (get_class(get_queried_object()) != 'WP_Term_Object') {
@@ -28,14 +31,14 @@
 		}
 		if ( isset($_GET['action']) ) {
 			if (isset($_GET['search'])) {
-				$search->set_search_text( esc_attr( $_GET['search'] ) ) ;
+				$search->set_search_text( $the_search ) ;
 			}
 			$date = array();
-			if ( !empty($_GET['date_month'])) {
-				$date['month'] = esc_attr( $_GET['date_month'] );
+			if ( isset($_GET['date_month'])) {
+				$date['month'] = $the_month;
 			}
-			if ( !empty( $_GET['date_year'] ) ) {
-				$date['year'] = esc_attr( $_GET['date_year'] );
+			if ( isset( $_GET['date_year'] ) ) {
+				$date['year'] = $the_year;
 			}
 			if ( !empty($date) ) {
 				$search->set_date($date);
@@ -60,19 +63,19 @@
 						<h5>Filter</h5>
 					</div>
 					<div class="item search-key">
-						<input type="text" placeholder="Keyword" value="<?php echo esc_attr($_GET['search']) ?>" class="input-type" name="search">
+						<input type="text" placeholder="Keyword" value="<?php echo $the_search; ?>" class="input-type" name="search">
 					</div>
 					<div class="item search-month">
 						<?php echo $search->get_months_select(array( 
 							'name' => 'date_month',
 							'class' => 'input-type'
-						), $_GET['date_month']); ?>
+						), $the_month); ?>
 					</div>
 					<div class="item search-year">
 						<?php echo $search->get_years_select(array( 
 							'name' => 'date_year',
 							'class' => 'input-type'
-						), $_GET['date_year']); ?>
+						), $the_year); ?>
 					</div>
 					<div class="item search-button">
 						<input type="submit" class="button secondary" value="Search">
