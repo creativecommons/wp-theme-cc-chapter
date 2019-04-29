@@ -982,7 +982,7 @@ body.page-id-48781 {
       margin-bottom: 10px;
     }
      h1{
-      @include visually-hidden();
+     // @include visually-hidden();
     }
     //regular posts only for hero and featured news styles
     //please refere to widget  class .widget_creativecommons_news_features_widget specified in _widget.scss

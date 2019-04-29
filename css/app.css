@@ -4819,16 +4819,6 @@ body.page-id-48781 ul.ways-to-give {
   line-height: 0.9em;
   margin-bottom: 10px; }
 
-.blog .site-main h1 {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0; }
-
 .blog .site-main .post {
   display: -webkit-flex;
   display: -ms-flexbox;

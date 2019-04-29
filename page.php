@@ -11,7 +11,8 @@
  * @since Twenty Sixteen 1.0
  */
 
-get_header(); ?>
+get_header(); 
+?>
 
 <!-- header-below -->
 <?php get_template_part( 'template-parts/sidebar/sidebar','header-below' ); ?>
