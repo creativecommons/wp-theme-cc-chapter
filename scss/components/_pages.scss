@@ -306,7 +306,22 @@ body.home {
     }
   }
 }
-
+.single, .page {
+  .site-main {
+    &>article {
+      @include breakpoint (tablet-sm-layout) {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+      }
+    }
+  }
+  .wrapper-sidebar {
+    @include breakpoint (tablet-sm-layout) {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+}
 //
 // Author
 // =================================

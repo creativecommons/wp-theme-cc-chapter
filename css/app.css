@@ -4006,6 +4006,16 @@ body.home .entry-content h2 {
     float: left;
     width: 45%; } }
 
+@media (max-width: 44.375em) {
+  .single .site-main > article, .page .site-main > article {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem; } }
+
+@media (max-width: 44.375em) {
+  .single .wrapper-sidebar, .page .wrapper-sidebar {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem; } }
+
 body.author .site-main .author-page-header .author-info-container {
   float: left;
   width: 100%;
