@@ -53,6 +53,23 @@ class ThemeSettings
                     ],
                     'children' => [
                         Node_Factory::make(
+                            WP_Editor::class,
+                            [
+                                'name' => 'footer-content',
+                                'label' => 'Footer Content',
+                                'value' => (!empty($data['footer-content'])) ? $data['footer-content'] : '',
+                                'attributes' => [
+                                    'class' => 'widefat'
+                                ],
+                                'properties' => [
+                                    'description' => 'Write your footer content',
+                                    'media_buttons' => true,
+                                    'drag_drop_upload' => false,
+                                    'textarea_rows' => 5
+                                ]
+                            ]
+                        ),
+                        Node_Factory::make(
                             Select::class,
                             [
                                 'name' => 'sidebar-1-background',
@@ -180,6 +197,7 @@ class ThemeSettings
         if (!wp_verify_nonce($_POST['_site_settings_nonce'], 'update_site_settings')) wp_die(_x("You are not supposed to do that", 'site settings error', 'cc-chapters'));
         if (!current_user_can('edit_theme_options')) wp_die(_x("You are not allowed to edit this options", 'site settings error', 'cc-chapters'));
         $fields = array(
+            'footer-content',
             'sidebar-1-background',
             'sidebar-2-background',
             'sidebar-3-background',

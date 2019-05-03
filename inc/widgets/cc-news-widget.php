@@ -5,7 +5,7 @@ class WP_Widget_news extends WP_Widget {
     function __construct() {
         $widget_ops = array('classname' => 'widget-news', 'description' => 'Show the last categorized news from the current site');
         $control_ops = array();
-        parent::__construct('widget-news', 'Last news', $widget_ops, $control_ops);
+        parent::__construct('widget-news', 'CC Last news', $widget_ops, $control_ops);
     }
     function get_last_news($size, $category) {
         $args = array(

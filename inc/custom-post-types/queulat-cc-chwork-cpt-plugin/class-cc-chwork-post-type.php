@@ -8,10 +8,10 @@ class Cc_Chwork_Post_Type extends Post_Type {
 	}
 	public function get_post_type_args() : array {
 		return [
-			'label'                 => __('Local Works', 'cpt_cc_chwork'),
+			'label'                 => __('Local Work', 'cpt_cc_chwork'),
 			'labels'                => [
-				'name'                     => __('Local Works', 'cpt_cc_chwork'),
-				'singular_name'            => __('Local Works', 'cpt_cc_chwork'),
+				'name'                     => __('Local Work', 'cpt_cc_chwork'),
+				'singular_name'            => __('Local Work', 'cpt_cc_chwork'),
 				'add_new'                  => __('Add New', 'cpt_cc_chwork'),
 				'add_new_item'             => __('Add New Page', 'cpt_cc_chwork'),
 				'edit_item'                => __('Edit Page', 'cpt_cc_chwork'),
@@ -22,8 +22,8 @@ class Cc_Chwork_Post_Type extends Post_Type {
 				'not_found'                => __('No pages found.', 'cpt_cc_chwork'),
 				'not_found_in_trash'       => __('No pages found in Trash.', 'cpt_cc_chwork'),
 				'parent_item_colon'        => __('Parent Page:', 'cpt_cc_chwork'),
-				'all_items'                => __('Local Works', 'cpt_cc_chwork'),
-				'archives'                 => __('Local Works', 'cpt_cc_chwork'),
+				'all_items'                => __('Local Work', 'cpt_cc_chwork'),
+				'archives'                 => __('Local Work', 'cpt_cc_chwork'),
 				'attributes'               => __('Page Attributes', 'cpt_cc_chwork'),
 				'insert_into_item'         => __('Insert into page', 'cpt_cc_chwork'),
 				'uploaded_to_this_item'    => __('Uploaded to this page', 'cpt_cc_chwork'),

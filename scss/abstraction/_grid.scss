@@ -12,7 +12,8 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     @include breakpoint(tablet-sm-layout) {
-        grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+        display: block;
+        // grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
     }
 }
 @mixin grid-columns($cols: 12, $gap: .5rem) {
@@ -48,6 +49,12 @@
 }
 @mixin grid-use-columns($size) {
     grid-column: span $size;
+    @include breakpoint(tablet-sm-layout) {
+        grid-column: span 12;
+    }
+}
+@mixin grid-use-columns-offset($offset,$size) {
+    grid-column: $offset/span $size;
     @include breakpoint(tablet-sm-layout) {
         grid-column: span 12;
     }
@@ -102,7 +109,11 @@
     @for $i from 1 through 12 {
         .use-#{$i}-columns {
             @include grid-use-columns($i);
-
+            @for $x from 2 through 11 {
+                &.offset-#{$x} {
+                    @include grid-use-columns-offset($x,$i);
+                }
+            }
         }
     }
 }

@@ -715,7 +715,7 @@ video.wp-video-shortcode {
 	}
 	.featured-programs article { 
 		margin-bottom: 30px; 
-		width: 50%;
+		// width: 50%;
 	}
 	.featured-programs .item {
 		text-align: center;
@@ -1029,6 +1029,7 @@ video.wp-video-shortcode {
 				.header-right-col { padding-top: 20px; }
 					#header-widget {
 						text-align: right;
+						padding: 0;
 						margin-bottom: 11px;
 						right: 40px;
 						position: relative;
@@ -1123,7 +1124,7 @@ video.wp-video-shortcode {
 .country_id .c_bw{ background-image:url(icons/flags/BW.png);}
 .country_id .c_by{ background-image:url(icons/flags/BY.png);}
 .country_id .c_bz{ background-image:url(icons/flags/BZ.png);}
-.country_id .c_ca{ background-image:url(icons/flags/CA.png);}
+.country_id .c_ca{ background-image:url(icons/flags/ca.png);}
 .country_id .c_cc{ background-image:url(icons/flags/CC.png);}
 .country_id .c_cd{ background-image:url(icons/flags/CD.png);}
 .country_id .c_cf{ background-image:url(icons/flags/CF.png);}
@@ -1251,7 +1252,7 @@ video.wp-video-shortcode {
 .country_id .c_nf{ background-image:url(icons/flags/NF.png);}
 .country_id .c_ng{ background-image:url(icons/flags/NG.png);}
 .country_id .c_ni{ background-image:url(icons/flags/NI.png);}
-.country_id .c_nl{ background-image:url(icons/flags/NL.png);}
+.country_id .c_nl{ background-image:url(icons/flags/nl.png);}
 .country_id .c_no{ background-image:url(icons/flags/NO.png);}
 .country_id .c_np{ background-image:url(icons/flags/NP.png);}
 .country_id .c_nr{ background-image:url(icons/flags/NR.png);}
@@ -1762,12 +1763,12 @@ video.wp-video-shortcode {
         /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
         height: auto;
         position: relative;
-        top: 0.5em;
-        left: 0.08em; 
+        top: 0.4em;
+        left: 0; 
 }
       .social-navigation a[href^="mailto:"]:before {
         content: "\e801";
-        left: 0.1em;
+        left: 0;
         top: 0.35em; 
 }
       .social-navigation a[href*="facebook.com"]:before {
@@ -2010,8 +2011,8 @@ video.wp-video-shortcode {
 
 }
 
-.admin-bar .site-header.sticky.detached.offscreen { top: 30px; }
-.admin-bar.layout-mobile .site-header.sticky.detached.offscreen { top: 45px; }
+// .admin-bar .site-header.sticky.detached.offscreen { top: 30px; }
+.admin-bar.layout-mobile .site-header.sticky.detached.offscreen { margin-top: 0; }
 
 
 @include breakpoint (tablet-sm-layout) { 

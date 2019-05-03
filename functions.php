@@ -10,6 +10,7 @@ define( 'CC_CSS_RELEASE_SERIAL_NUMBER', '20181120' );
  * Include telated files
 */
 require STYLESHEETPATH . '/inc/taxonomies.php';
+require STYLESHEETPATH . '/inc/search_filter.php';
 require STYLESHEETPATH . '/inc/helpers.php';
 require STYLESHEETPATH . '/inc/site.php';
 require STYLESHEETPATH . '/inc/render.php';
@@ -20,7 +21,7 @@ require STYLESHEETPATH . '/inc/settings.php';
 // CUSTOM POST TYPES
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chfeature-cpt-plugin/cc-chfeature-cpt-plugin.php';
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chvideos-cpt-plugin/cc-chvideos-cpt-plugin.php';
-require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chdocument-cpt-plugin/cc-chdocument-cpt-plugin.php';
+//require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chdocument-cpt-plugin/cc-chdocument-cpt-plugin.php';
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chevent-cpt-plugin/cc-chevent-cpt-plugin.php';
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chteam-cpt-plugin/cc-chteam-cpt-plugin.php';
 require STYLESHEETPATH. '/inc/custom-post-types/queulat-cc-chwork-cpt-plugin/cc-chwork-cpt-plugin.php';
@@ -271,74 +272,9 @@ foreach ($mandatory_sidebars as $sidebar => $id_sidebar) {
 	));
 }
 
-
-function cc_chapter_widgets_init() {
-
-	// Register three sidebars.
-	$sidebars = array(
-		'a' => 'header-widget',
-		'b' => 'homepage-content-widgets',
-		'c' => 'footer-center',
-	);
-
-	$active_widgets = get_option( 'sidebars_widgets' );
-
-	if ( empty( $active_widgets[ $sidebars['a'] ] ) ) {
-		$counter                                 = 1;
-		$active_widgets[ $sidebars['a'] ][0]     = 'creativecommons_header_links-' . $counter;
-		$header_links_widget_content[ $counter ] = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_header_links', $header_links_widget_content );
-	}
-
-	if ( empty( $active_widgets[ $sidebars['b'] ] ) ) {
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][] = 'creativecommons_links-' . $counter;
-		$links_widget_content[ $counter ]   = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_links', $links_widget_content );
-
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][]  = 'creativecommons_programs-' . $counter;
-		$programs_widget_content[ $counter ] = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_programs', $programs_widget_content );
-
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][] = 'creativecommons_news-' . $counter;
-		$news_widget_content[ $counter ]    = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_news', $news_widget_content );
-
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][] = 'creativecommons_works-' . $counter;
-		$works_widget_content[ $counter ]   = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_works', $works_widget_content );
-
-		$counter++;
-		$active_widgets[ $sidebars['b'] ][] = 'creativecommons_videos-' . $counter;
-		$videos_widget_content[ $counter ]  = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_videos', $videos_widget_content );
-	}
-
-	if ( empty( $active_widgets[ $sidebars['c'] ] ) ) {
-
-		$counter++;
-		$active_widgets[ $sidebars['c'] ][]      = 'creativecommons_footer_links-' . $counter;
-		$footer_links_widget_content[ $counter ] = array( 'title' => 'WordPress Stack Exchange' );
-		update_option( 'widget_creativecommons_footer_links', $footer_links_widget_content );
-	}
-		update_option( 'sidebars_widgets', $active_widgets );
-
-}
-
-
-
 // ##############################################################################
 // ##############################################################################
-function cc_chapter_remove_parent_sidebars() {
-	unregister_sidebar( 'sidebar-2' );
-	unregister_sidebar( 'sidebar-3' );
-}
 
-add_action( 'widgets_init', 'cc_chapter_widgets_init', 10 );
-add_action( 'widgets_init', 'cc_chapter_remove_parent_sidebars', 11 );
 
 // stop wp removing span tags
 function cc_chapter_tinymce_fix( $init ) {

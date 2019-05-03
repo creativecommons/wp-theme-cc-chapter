@@ -46,21 +46,25 @@
       </div>
 
       <div class="column cc-footer-license">
-      <div class="license-icons">
-        <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license">
-        <?php /* <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="License"> */ ?>
-        <i class="cc-icon-cc"></i><i class="cc-icon-cc-by"></i>
-        </a>
-      </div>
-      <aside>
-        <div xmlns:cc="https://creativecommons.org/ns#" about="https://creativecommons.org">
-        <p>Except where otherwise <a class="subfoot" href="/policies#license">noted</a>, content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>. <a class="subfoot" href="/website-icons" target="blank">Icons</a> by The Noun Project.</p>
-        <?php if ( is_front_page() ) { ?>
-        <p class="website-credit">Website by <a class="subfoot" href="http://affinitybridge.com/" target="blank"> Affinity Bridge</a>.</p>
+        <?php 
+            global $_set;
+            $settings = $_set->settings;
+            if (!empty($settings['footer-content'])) {
+                echo apply_filters( 'the_content', $settings['footer-content'] );
+            } else {
+         ?>
+            <div class="license-icons">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license">
+                <?php /* <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="License"> */ ?>
+                <i class="cc-icon-cc"></i><i class="cc-icon-cc-by"></i>
+                </a>
+            </div>
+            <aside>
+                <div xmlns:cc="https://creativecommons.org/ns#" about="https://creativecommons.org">
+                <p>Except where otherwise <a class="subfoot" href="/policies#license">noted</a>, content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>. <a class="subfoot" href="/website-icons" target="blank">Icons</a> by The Noun Project.</p>
+                </div>
+            </aside>
         <?php } ?>
-
-        </div>
-      </aside>
       </div>
 
       <div class="column cc-footer-search">

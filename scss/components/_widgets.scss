@@ -89,6 +89,14 @@
             font-weight: 700;
             line-height: 4.5rem;
         }
+        @include breakpoint(tablet-sm-layout) {
+            .grid-container {
+                display: block !important;
+                .widget-title {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
     }
     &.news {
         padding: 0;

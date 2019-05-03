@@ -280,7 +280,7 @@ body.home {
 
     h2 {
       color: $grey-dark;
-      font-size: px2rem(38);
+      font-size: px2rem(30);
       line-height: 0.8em;
       margin-bottom: 20px;
 
@@ -306,7 +306,22 @@ body.home {
     }
   }
 }
-
+.single, .page {
+  .site-main {
+    &>article {
+      @include breakpoint (tablet-sm-layout) {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+      }
+    }
+  }
+  .wrapper-sidebar {
+    @include breakpoint (tablet-sm-layout) {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+}
 //
 // Author
 // =================================
@@ -982,7 +997,7 @@ body.page-id-48781 {
       margin-bottom: 10px;
     }
      h1{
-      @include visually-hidden();
+     // @include visually-hidden();
     }
     //regular posts only for hero and featured news styles
     //please refere to widget  class .widget_creativecommons_news_features_widget specified in _widget.scss

@@ -10,7 +10,7 @@ function cc_chapter_setup_default_install($blog_id)
     switch_to_blog($blog_id);
 
     // Change to a different theme.
-    switch_theme("wp-theme-cc-chapter");
+    switch_theme("cc-chapter");
 
     // Set country code
     if (!empty($_POST['blog']['country_code'])) {
