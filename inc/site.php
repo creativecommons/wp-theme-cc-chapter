@@ -22,4 +22,10 @@ class front {
             return ' '.$settings[$sidebar.'-background'];
         }
     }
+    static function prevent_multisite_signup() {
+        wp_redirect('https://network.creativecommons.org', 301);
+        die();
+    }
 }
+//Redirect to CCGN when website does not exists
+add_action( 'before_signup_header', array( 'front', 'prevent_multisite_signup' ) );
