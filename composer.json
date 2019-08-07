@@ -26,6 +26,10 @@
             "type":"vcs",
             "url":"https://github.com/creativecommons/queulat",
             "no-api":true
+        },
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
         }
     ],
     "require": {
@@ -34,7 +38,11 @@
         "wpackagist-theme/twentysixteen":"1.9"
     },
     "extra": {
-        "installer-name":"cc-chapter"
+        "installer-name":"cc-chapter",
+		"installer-paths" : {
+			"../../mu-plugins/{$name}" : ["type:wordpress-muplugin"],
+            "../../themes/{$name}" : ["wpackagist-theme/twentysixteen"]
+		}
     },
     "scripts": {
         "compat":"phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",
