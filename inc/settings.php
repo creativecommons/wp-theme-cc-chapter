@@ -1,5 +1,3 @@
-
-
 <?php 
 use Queulat\Forms\Element\Div;
 use Queulat\Forms\Element\Form;
@@ -10,6 +8,7 @@ use Queulat\Forms\Element\Input_Url;
 use Queulat\Forms\Element\WP_Editor;
 use Queulat\Forms\Element\Input_Text;
 use Queulat\Forms\Element\Input;
+use Queulat\Forms\Element\Input_Checkbox;
 use Queulat\Forms\Element\Select;
 
 class ThemeSettings
@@ -155,6 +154,20 @@ class ThemeSettings
                             ]
                         ),
                         Node_Factory::make(
+                            Input_Checkbox::class,
+                            [
+                                'name' => 'hide_flag',
+                                'label' => 'Hide country flag?',
+                                'value' => (!empty($data['hide_flag'])) ? $data['hide_flag'] : '',
+                                'attributes' => [
+                                    'class' => 'widefat'
+                                ],
+                                'options' => array(
+                                    '1'          => 'yes'
+                                )
+                            ]
+                        ),
+                        Node_Factory::make(
                             WP_Nonce::class,
                             [
                                 'properties' => [
@@ -190,8 +203,6 @@ class ThemeSettings
     }
     public function saveSettings()
     {
-        // echo '<pre>'; print_r($_POST); echo '</pre>';
-        // die();
         if (empty($_POST['action'])) return;
         if ($_POST['action'] !== 'update_site_settings') return;
         if (!wp_verify_nonce($_POST['_site_settings_nonce'], 'update_site_settings')) wp_die(_x("You are not supposed to do that", 'site settings error', 'cc-chapters'));
@@ -203,6 +214,7 @@ class ThemeSettings
             'sidebar-3-background',
             'sidebar-4-background',
             'sidebar-5-background',
+            'hide_flag'
         );
         $raw_post = stripslashes_deep($_POST);
         $data = array_intersect_key($raw_post, array_combine($fields, $fields));
