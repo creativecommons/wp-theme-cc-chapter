@@ -56,7 +56,9 @@
                                 </a>
                                 <span class="country_id">
                                     <?php
-                                    if ( get_option( 'country_code' ) ) {
+                                    global $_set;
+                                    $settings = $_set->settings;
+                                    if ( get_option( 'country_code' ) && (!$settings['hide_flag']) ) {
                                         print do_shortcode( '<span class="flag c_' . strtolower( get_option( 'country_code' ) ) . '"></span>' ); }
                                     ?>
                                   <span class="name"><?php print get_bloginfo( 'name' ); ?></span>
