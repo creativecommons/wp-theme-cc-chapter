@@ -5,7 +5,7 @@
  * Release serial number - Used to bust the cache. Please update
  *                         any time you change CSS or JS.
  */
-define( 'CC_CSS_RELEASE_SERIAL_NUMBER', 'v2019.8.1' );
+define( 'CC_CSS_RELEASE_SERIAL_NUMBER', '2019.8.2' );
 /**
  * Include telated files
 */
