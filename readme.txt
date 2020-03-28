@@ -2,6 +2,7 @@
 Contributors: quentinrogers, mackaffinity, cctimidrobot, hugosolar
 Tags: CreativeCommons
 Requires at least: 4.5+
+Stable tag: "trunk"
 Tested up to: 5.0.3
 Requires PHP: 7.0
 License: GPLv2 or later
