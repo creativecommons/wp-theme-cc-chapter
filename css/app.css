@@ -8969,7 +8969,7 @@ button.donate.arrow:hover::after,
 
 .toggled-on .mobile-navigation {
   display: none;
-  height: 285px;
+  height: 100%;
   box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.8); }
 
 .mobile-navigation ul {
