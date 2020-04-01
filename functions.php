@@ -5,7 +5,7 @@
  * Release serial number - Used to bust the cache. Please update
  *                         any time you change CSS or JS.
  */
-define( 'CC_CSS_RELEASE_SERIAL_NUMBER', '2019.8.2' );
+define( 'CC_CSS_RELEASE_SERIAL_NUMBER', '2020.04.1' );
 /**
  * Include telated files
 */
@@ -71,7 +71,7 @@ class site
 	protected $settings;
 
 	const id = __CLASS__;
-	const theme_ver = '20140624';
+	const theme_ver = '2020.04.1';
 	const theme_settings_permissions = 'edit_theme_options';
 	private function __construct()
 	{
