@@ -2750,7 +2750,8 @@ body.admin-bar .site-header.sticky {
   .wrapper-main {
     -webkit-flex: 1 0 70%;
         -ms-flex: 1 0 70%;
-            flex: 1 0 70%; } }
+            flex: 1 0 70%;
+    width: 70%; } }
 
 @media (min-width: 56.875em) {
   .wrapper-sidebar {

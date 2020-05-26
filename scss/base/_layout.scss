@@ -347,6 +347,7 @@ body.admin-bar .site-header.sticky {
     
     @include breakpoint (desktop-sm-layout) {
         flex: 1 0 70%;
+        width: 70%;
     }
 }
 
