@@ -4,7 +4,7 @@ Contributors: quentinrogers, mackaffinity, cctimidrobot, hugosolar
 Donate link: https://us.netdonor.net/page/6650/donate/1
 Tags: CreativeCommons
 Requires at least: 4.5+
-Tested up to: 5.0.3
+Tested up to: 5.5
 Stable tag: trunk
 Requires PHP: 7.0
 License: GPLv2 or later
