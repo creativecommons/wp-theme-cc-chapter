@@ -26,6 +26,7 @@ To install gulp:
 
 To build the js/css:
 
+- Go to the directory (cd wp-theme-cc-chapter) 
 - run `npm install` to download the 3rd party libs in `package.json`
 - during development:
   - run `gulp` in the background, i.e. run `gulp` in a terminal and leave it
@@ -49,7 +50,7 @@ Clone the repository into your `wp-content/themes`
 > git clone git@github.com:creativecommons/wp-theme-cc-chapter.git
 ``` 
 
-then, go to the directory (`cd wp-theme-cc-chapter` ) and execute composer install
+then, go to the directory (`cd wp-theme-cc-chapter`) and execute composer install
 ```
 > composer install
 ```
@@ -72,9 +73,9 @@ require_once __DIR__ .'/../themes/wp-theme-cc-chapter/vendor/autoload.php';
 // Load Queulat main file.
 require_once __DIR__ .'/queulat/queulat.php';
 ```
-*note: if you chose a different directory name for theme repository you should replace `wp-theme-cc-chapter` for the chosen folder name*
+*note: if you chose a different directory name for theme repository you should replace `wp-theme-cc-chapter` for the chosen directory/folder name*
 
-Once queulat ins installed, you should install its `javascript` dependencies by executing
+Once queulat is installed, you should install its `javascript` dependencies by executing
 ```
 > npm install --production
 ```
